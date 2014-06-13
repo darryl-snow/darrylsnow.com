@@ -1,0 +1,13 @@
+doctype
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='initial-scale=1, width=device-width')
+		title mysite
+		link(href='lib.css', rel='stylesheet')
+		link(href='app.css', rel='stylesheet')
+	body(ng-app='mysite')
+		.container(ng-view='')
+		script(src='lib.js')
+		script(src='templates.js')
+		script(src='app.js')
