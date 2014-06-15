@@ -2,6 +2,7 @@
 
 require "angular"
 require "angular-route"
+require "./templates"
 
 # other modules
 require "./main/main_controller.coffee"

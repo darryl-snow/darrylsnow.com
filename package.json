@@ -5,22 +5,29 @@
   "devDependencies": {
     "angular": "^1.2.16",
     "angular-route": "^1.2.17-build.163.1",
-    "coffee-script": "latest",
+    "coffee-script": "^1.7.1",
     "coffeeify": "^0.6.0",
+    "connect-livereload": "^0.4.0",
+    "express": "^4.4.3",
     "gulp": "~3.5.5",
     "gulp-angular-templatecache": "^1.1.0",
+    "gulp-autoprefixer": "0.0.7",
     "gulp-browserify": "^0.5.0",
     "gulp-coffee": "^2.0.1",
     "gulp-coffeelint": "^0.3.3",
     "gulp-concat": "~2.1.7",
-    "gulp-connect": "^1.0.7",
     "gulp-jade": "^0.5.0",
     "gulp-jshint": "~1.5.0",
+    "gulp-livereload": "^2.1.0",
     "gulp-load-plugins": "~0.4.0",
+    "gulp-minify-css": "^0.3.4",
     "gulp-rename": "^1.2.0",
     "gulp-stylus": "^1.0.2",
+    "gulp-uglify": "^0.3.0",
     "karma": "^0.12.1",
     "karma-chrome-launcher": "^0.1.2",
-    "karma-jasmine": "^0.1.5"
+    "karma-jasmine": "^0.1.5",
+    "open": "0.0.5",
+    "tiny-lr": "0.0.7"
   }
 }
