@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><title>mysite</title><link href="styles/app.css" rel="stylesheet"></head><body ng-app="mysite"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="752" height="128" viewBox="0 0 752 128" style="display:none">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="752" height="128" viewBox="0 0 752 128" style="display:none">
 <defs>
 <g id="icon-phone">
 	<path class="path1" d="M17.966 17.966c-2.533 2.534-5.467 4.957-6.627 3.795-1.661-1.659-2.683-3.106-6.344-0.165s-0.85 4.902 0.76 6.512c1.856 1.854 8.774 0.098 15.614-6.741 6.837-6.838 8.597-13.758 6.739-15.614-1.608-1.61-3.568-4.419-6.51-0.76s-1.496 4.683 0.165 6.344c1.157 1.162-1.264 4.094-3.797 6.629z"></path>
@@ -148,4 +148,4 @@
 	<use xlink:href="#icon-pinterest" transform="translate(96 96)"></use>
 	<use xlink:href="#icon-skype" transform="translate(144 96)"></use>
 </g>
-</svg><div data-ng-view="" class="container"></div><script src="scripts/app.js"></script></body></html>
+</svg>

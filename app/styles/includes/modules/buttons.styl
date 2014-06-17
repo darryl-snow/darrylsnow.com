@@ -1,0 +1,60 @@
+.button
+	border 					none
+
+	&--plain
+		background 			none
+
+	&--small
+		svg
+			height 			20px
+			width 			20px
+
+.button-group
+	clear 					both
+	display 				flex
+
+	.button
+		flex 				1
+		margin 				0
+
+.button-mail
+	background 				$cobalt
+	color 					$white
+
+.button-phone
+	background 				$purple
+	color 					$white
+
+.button-github
+	background 				$github
+	color 					$white
+
+.button-skype
+	background 				$skype
+	color 					$white
+
+.button-twitter
+	background 				$twitter
+	color 					$white
+
+.button-googleplus
+	background 				$googleplus
+	color 					$white
+
+.button-pinterest
+	background 				$pinterest
+	color 					$white
+
+.toggle-expand-button
+	@extends				.button--plain
+	opacity 				0.5
+	padding 				0
+	position 				absolute
+	right 					$base-spacing-unit * 0.5
+	top 					$base-spacing-unit * 0.5
+	transition				$fast-transition
+
+	&:active,
+	&:focus,
+	&:hover
+		opacity 			1

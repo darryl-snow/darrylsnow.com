@@ -6,50 +6,65 @@ open		= require "open"
 path		= require "path"
 lr			= require("tiny-lr")()
 
-gulp.task "scripts", ->
-	gulp.src "./app/**/*.coffee"
-	.pipe plugins.coffeelint()
-	.pipe plugins.coffeelint.reporter()
+gulp.task "vendorCSS", ->
+	gulp.src ["!./bower_components/**/*.min.css", "./bower_components/**/*.css"]
+	.pipe plugins.concat "lib.css"
+	.pipe plugins.minifyCss()
+	.pipe gulp.dest "./app/styles/includes"
 
-	gulp.src "./app/app.coffee", read:false
-	.pipe plugins.browserify
-		transform: ["coffeeify"]
-	# .pipe plugins.coffee
-	# 	bare: true
-	.pipe plugins.uglify
-		mangle: false
-	.pipe plugins.rename "app.js"
-	.pipe gulp.dest "./build"
-
-gulp.task "templates", ->
-	gulp.src ["!./app/index.jade", "./app/**/*.jade"]
-	.pipe plugins.jade
-		pretty: false
-	.pipe plugins.angularTemplatecache "templates.js",
-		standalone: true
-	.pipe gulp.dest "./app"
-
-gulp.task "css", ->
+gulp.task "css", ["vendorCSS"], ->
 	gulp.src "./app/styles/main.styl"
+	.pipe plugins.plumber()
 	.pipe plugins.stylus
 		set: ["compress"]
 	.pipe plugins.autoprefixer "last 1 version", "> 1%", "ie 8", "ie 7"
 	.pipe plugins.minifyCss()
 	.pipe plugins.rename "app.css"
-	.pipe gulp.dest "./build"
+	.pipe plugins.size
+		showFiles: true
+	.pipe gulp.dest "./build/styles"
 
-gulp.task "vendorJS", ->
-	gulp.src ["!./bower_components/**/*.min.js", "./bower_components/**/*.js"]
-	.pipe plugins.concat "lib.js"
+gulp.task "templates", ->
+	console.log ""
+	gulp.src ["!./app/index.jade", "./app/**/*.jade"]
+	.pipe plugins.plumber()
+	.pipe plugins.jade
+		pretty: false
+	.pipe plugins.angularTemplatecache "templates.js",
+		standalone: true
+	.pipe gulp.dest "./app/scripts"
+
+gulp.task "scripts", ["templates"], ->
+	gulp.src "./app/scripts/**/*.coffee"
+	.pipe plugins.coffeelint()
+	.pipe plugins.coffeelint.reporter()
+
+	gulp.src "./app/scripts/app.coffee", read:false
+	.pipe plugins.plumber()
+	.pipe plugins.browserify
+		transform: ["coffeeify"]
 	.pipe plugins.uglify
 		mangle: false
-	.pipe gulp.dest "./build"
+	.pipe plugins.rename "app.js"
+	.pipe plugins.size
+		showFiles: true
+	.pipe gulp.dest "./build/scripts"
 
-gulp.task "vendorCSS", ->
-	gulp.src ["!./bower_components/**/*.min.css", "./bower_components/**/*.css"]
-	.pipe plugins.concat "lib.css"
-	.pipe plugins.minifyCss()
-	.pipe gulp.dest "./build"
+gulp.task "images", ->
+	gulp.src "./app/images/**/*.{jpg,png,gif}"
+		.pipe plugins.plumber()
+		.pipe plugins.imagemin
+			cache: false
+		.pipe plugins.size
+			showFiles: true
+		.pipe gulp.dest "./build/images"
+
+	gulp.src "./app/images/**/*.svg"
+		.pipe plugins.plumber()
+		.pipe plugins.svgmin()
+		.pipe plugins.size
+			showFiles: true
+		.pipe gulp.dest "./build/images"
 
 gulp.task "copy-index", ->
 	gulp.src "./app/index.jade"
@@ -59,14 +74,16 @@ gulp.task "copy-index", ->
 
 gulp.task "watch", ->
 	gulp.watch [
-		"build/**/*.js"
-		"build/**/*.css"
-		"build/**/*.html"
+		"./build/**/*.js"
+		"./build/**/*.css"
+		"./build/**/*.html"
+		"./build/**/*.{jpg,png,gif,svg}"
 	], notifyLivereload
 
 	gulp.watch [
-		"./app/**/*.coffee"
-		"!./app/**/*test.coffee"
+		"./app/scripts/**/*.coffee"
+		"!./app/scripts/**/*test.coffee"
+		"./app/scripts/**/*.js"
 	], ["scripts"]
 
 	gulp.watch [
@@ -75,6 +92,7 @@ gulp.task "watch", ->
 	], ["templates"]
 
 	gulp.watch "./app/**/*.styl", ["css"]
+	gulp.watch "./app/**/*.{jpg,png,gif,svg}", ["images"]
 	gulp.watch "./app/index.jade", ["copy-index"]
 
 gulp.task "server", ->
@@ -93,11 +111,9 @@ notifyLivereload = (event) ->
 
 gulp.task "default", [
 	"scripts"
-	"templates"
 	"css"
+	"images"
 	"copy-index"
-	"vendorJS"
-	"vendorCSS"
 	"watch"
 	"server"
 ]

@@ -1,0 +1,14 @@
+.panel
+	group()
+	background			$panel-background-colour
+	box-shadow			0 0.2em 0.2em rgba(black, 0.1)
+	transition			$fast-transition
+
+	&--padded	
+		padding			$base-spacing-unit
+
+	&--spaced
+		margin 			$base-spacing-unit * 0.5
+
+		@media $lap
+			margin 		$base-spacing-unit
