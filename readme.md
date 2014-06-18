@@ -26,5 +26,6 @@ karma start karma-unit.coffee
 To generate a CV:
 
 ```
-md2resume --pdf app/my-cv.md
+sudo gem install gimli
+gimli -f app/darryl-snow-cv--english.md -o app
 ```

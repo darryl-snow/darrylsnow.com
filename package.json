@@ -2,9 +2,6 @@
 	"name": "DarrylSnow.com",
 	"version": "0.0.1",
 	"main": "app.js",
-	"dependencies": {
-		"markdown-resume": "latest"
-	},
 	"devDependencies": {
 		"angular": "^1.2.16",
 		"angular-animate": "0.0.2",
