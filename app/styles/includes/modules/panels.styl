@@ -1,7 +1,15 @@
 .panel
+	
+	&.ng-enter
+		outline thin solid red
+
+	&.ng-enter.ng-enter-active
+		outline thin solid green
+
 	group()
 	background			$panel-background-colour
 	box-shadow			0 0.2em 0.2em rgba(black, 0.1)
+	position 			relative
 	transition			$fast-transition
 
 	&--padded	
@@ -12,3 +20,34 @@
 
 		@media $lap
 			margin 		$base-spacing-unit
+
+	&--maximised
+		left 			0
+		position 		absolute
+		right 			0
+		top 			0
+		transition 		0.3s all ease-out
+
+	&:before
+		background 		$panel-background-colour
+		bottom 			0
+		content 		""
+		left 			0
+		opacity 		0
+		position 		absolute
+		right 			0
+		top 			0
+		transition		0.3s all ease-in
+		z-index 		-1
+
+	&--maximised-add
+		&:before
+			opacity 	1
+			transition	none
+			z-index 	10
+
+	&--maximised-remove
+		&:before
+			opacity 	1
+			transition	none
+			z-index 	10

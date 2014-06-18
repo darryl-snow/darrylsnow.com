@@ -43,8 +43,8 @@ gulp.task "scripts", ["templates"], ->
 	.pipe plugins.plumber()
 	.pipe plugins.browserify
 		transform: ["coffeeify"]
-	.pipe plugins.uglify
-		mangle: false
+	# .pipe plugins.uglify
+	# 	mangle: false
 	.pipe plugins.rename "app.js"
 	.pipe plugins.size
 		showFiles: true
@@ -66,10 +66,13 @@ gulp.task "images", ->
 			showFiles: true
 		.pipe gulp.dest "./build/images"
 
-gulp.task "copy-index", ->
+gulp.task "copy-files", ->
 	gulp.src "./app/index.jade"
 	.pipe plugins.jade
 		pretty: false
+	.pipe gulp.dest "./build"
+
+	gulp.src "./app/darryl-snow-cv--english.pdf"
 	.pipe gulp.dest "./build"
 
 gulp.task "watch", ->
@@ -93,7 +96,7 @@ gulp.task "watch", ->
 
 	gulp.watch "./app/**/*.styl", ["css"]
 	gulp.watch "./app/**/*.{jpg,png,gif,svg}", ["images"]
-	gulp.watch "./app/index.jade", ["copy-index"]
+	gulp.watch "./app/index.jade", ["copy-files"]
 
 gulp.task "server", ->
 	app = express()
@@ -113,7 +116,7 @@ gulp.task "default", [
 	"scripts"
 	"css"
 	"images"
-	"copy-index"
+	"copy-files"
 	"watch"
 	"server"
 ]

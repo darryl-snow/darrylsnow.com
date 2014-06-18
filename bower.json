@@ -1,21 +1,25 @@
 {
-	"name": "mysite",
-	"main": "app.js",
-	"version": "0.0.1",
-	"authors": [
-		"Darryl Snow <dazsnow@gmail.com>"
-	],
-	"license": "MIT",
-	"private": true,
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
-	"devDependencies": {
-		"angular": "~1.2.14",
-		"angular-route": "~1.2.14"
-	}
+  "name": "mysite",
+  "main": "app.js",
+  "version": "0.0.1",
+  "authors": [
+    "Darryl Snow <dazsnow@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.14",
+    "angular-animate": "~1.2.14",
+    "angular-route": "~1.2.14"
+  },
+  "resolutions": {
+    "angular": "1.2.18"
+  }
 }

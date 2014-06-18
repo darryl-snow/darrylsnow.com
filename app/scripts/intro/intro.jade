@@ -1,0 +1,53 @@
+section.intro
+	.panel.panel--spaced(data-ng-class="{'panel--maximised':maximised}", expandable="maximised")
+
+		.padded-box
+
+			.intro-avatar
+				img.image.image--rounded(src="images/darryl-snow.png")
+
+			.intro-text
+				h1 Darryl Snow
+					.subheading Web Expert
+
+				p I am a 
+					span.bold freelance 
+					| web designer, developer, and project manager with over 15 years' experience. I live in Kunming, South China, but can adjust to any time zone. I built websites and web apps for any device.
+
+				a.button.intro-download-cv(href="", title="Download my CV")
+					svg.icon(viewBox="0 0 32 32")
+						use(xlink:href="#icon-vcard")
+					|  Download my CV
+
+				.extended-intro(data-ng-show="maximised")
+					h2 More about me&hellip;
+					p I grew up in Jersey
+
+		.button-group.intro-social-buttons
+			button.button.button--small.button-mail
+				svg.icon(viewBox="0 0 32 32")
+					use(xlink:href="#icon-mail")
+			button.button.button--small.button-phone
+				svg.icon(viewBox="0 0 32 32")
+					use(xlink:href="#icon-phone")
+			button.button.button--small.button-github
+				svg.icon(viewBox="0 0 32 32")
+					use(xlink:href="#icon-github")
+			button.button.button--small.button-skype
+				svg.icon(viewBox="0 0 32 32")
+					use(xlink:href="#icon-skype")
+			button.button.button--small.button-twitter
+				svg.icon(viewBox="0 0 32 32")
+					use(xlink:href="#icon-twitter")
+			button.button.button--small.button-googleplus
+				svg.icon(viewBox="0 0 32 32")
+					use(xlink:href="#icon-googleplus")
+			button.button.button--small.button-pinterest
+				svg.icon(viewBox="0 0 32 32")
+					use(xlink:href="#icon-pinterest")
+
+		//- button.button.button--small.toggle-expand-button
+		//- 	svg.icon(viewBox="0 0 32 32", data-ng-show="!maximised")
+		//- 		use(xlink:href="#icon-resize-enlarge")
+		//- 	svg.icon(viewBox="0 0 32 32", data-ng-show="maximised")
+		//- 		use(xlink:href="#icon-resize-shrink")
