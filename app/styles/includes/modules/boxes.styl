@@ -1,0 +1,68 @@
+.box
+	group()
+	transition 			0.3s all ease-in-out
+	
+	&--padded
+		padding			$base-spacing-unit
+
+	&--white
+		background 		$white
+
+	&--blue
+		background 		$blue
+		color 			$white
+
+	&--yellow
+		background 		lighten($yellow, 92%)
+
+	&--green
+		background 		$green
+		color 			lighten($green, 80%)
+
+	&--brown
+		background 		lighten($brown, 95%)
+		// border-top 		2px solid rgba($brown, 0.2)
+
+	&--email
+		background 		$cobalt
+		color 			$white
+
+		a
+			color 				$white
+			display 			block
+			font-size 			1.5em
+			font-weight 		300
+			margin 				1em 0 0 0
+			padding 			0.5em
+			text-decoration 	none
+
+			@media $desk
+				display 		inline-block
+
+			&:active,
+			&:focus,
+			&:hover
+				background 		$white
+				color 			$cobalt
+
+	&--phone
+		background 		$purple
+		color 			$white
+
+		a
+			color 				$white
+			display 			block
+			font-size 			1.5em
+			font-weight 		300
+			margin 				1em 0 0 0
+			padding 			0.5em
+			text-decoration 	none
+
+			@media $desk
+				display 		inline-block
+
+			&:active,
+			&:focus,
+			&:hover
+				background 		$white
+				color 			$purple

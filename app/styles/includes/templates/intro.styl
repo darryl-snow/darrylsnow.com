@@ -1,17 +1,9 @@
 .intro
-	column(12)
-	offset(0)
-	group()
 	overflow 			visible
 	text-align 			center
 
-	@media $lap
-		column(8)
-		offset(2)
-		group()
-		overflow 		visible
-
 	@media $desk
+		max-width 		50%
 		text-align 		left
 
 .intro-avatar
@@ -37,15 +29,15 @@
 	@extends 			.button--ghost
 	@extends 			.button--small
 	border-color 		$text-colour
-	color 				$text-colour
+	color 				$text-colour !important
 	opacity 			0.7
 
 	&:active,
 	&:focus,
 	&:hover
-		// opacity 		1
-		color $white
-		background $text-colour
+		background 		$text-colour
+		color 			$white !important
+		
 
 .intro-social-buttons
 	float 				left
@@ -54,6 +46,8 @@
 	width 				100%
 
 	.button
+		@extends 		.button--flat
+		@extends 		.button--square
 		opacity 		0.7
 		transition		$fast-transition * 0.5
 

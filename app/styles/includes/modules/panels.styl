@@ -1,53 +1,114 @@
 .panel
-	
-	&.ng-enter
-		outline thin solid red
-
-	&.ng-enter.ng-enter-active
-		outline thin solid green
-
 	group()
-	background			$panel-background-colour
-	box-shadow			0 0.2em 0.2em rgba(black, 0.1)
-	position 			relative
-	transition			$fast-transition
+	background 				$white
+	box-shadow 				0 0.2em 0.2em rgba(black, 0.1)
+	margin 					$base-spacing-unit
+	position 				relative
 
-	&--padded	
-		padding			$base-spacing-unit
+	&--transparent
+		background 			rgba($white, 0.4)
 
-	&--spaced
-		margin 			$base-spacing-unit * 0.5
+.panel-front
+	group()
+	transform 				rotateX(0deg)
+	transform-origin 		0 0
+	z-index 				2
 
-		@media $lap
-			margin 		$base-spacing-unit
+.panel-back
+	group()
+	backface-visibility 	hidden
+	left 					0
+	position 				absolute
+	transform-origin 		0 0
+	transition 				0.2s transform ease-in
+	width 					100%
+	z-index 				1
 
-	&--maximised
-		left 			0
-		position 		absolute
-		right 			0
-		top 			0
-		transition 		0.3s all ease-out
+	&--bottom
+		top 				100%
+		transform 			rotateX(-180deg)
 
-	&:before
-		background 		$panel-background-colour
-		bottom 			0
-		content 		""
-		left 			0
-		opacity 		0
-		position 		absolute
-		right 			0
-		top 			0
-		transition		0.3s all ease-in
-		z-index 		-1
+	&--right
+		left 				100%
+		height 				100%
+		top 				0
+		transform 			rotateY(-180deg)
 
-	&--maximised-add
-		&:before
-			opacity 	1
-			transition	none
-			z-index 	10
+		.box
+			height 			100%
 
-	&--maximised-remove
-		&:before
-			opacity 	1
-			transition	none
-			z-index 	10
+.panel--flipped
+	.panel-back
+		transition 			0.2s transform ease-out
+		z-index 			2
+
+		&--bottom
+			transform 		rotateX(0deg)
+
+		&--right
+			transform 		rotateY(0deg)
+	
+.panel-title
+	@extends 				.centred
+	background 				$cobalt
+	color 					$white
+	font-size 				1.2em
+	font-weight 			600
+	letter-spacing 			-0.2px
+	margin 					0
+	padding 				0.7em 1em
+	text-transform 			uppercase
+
+
+
+	// &.ng-enter
+	// 	outline thin solid red
+
+	// &.ng-enter.ng-enter-active
+	// 	outline thin solid green
+
+	// group()
+	// background			$panel-background-colour
+	// box-shadow			0 0.2em 0.2em rgba(black, 0.1)
+	// position 			relative
+	// transition			$fast-transition
+
+	// &--padded	
+	// 	padding			$base-spacing-unit
+
+	// &--spaced
+	// 	margin 			$base-spacing-unit * 0.5
+
+	// 	@media $lap
+	// 		margin 		$base-spacing-unit
+
+	// &--maximised
+	// 	left 			0
+	// 	position 		absolute
+	// 	right 			0
+	// 	top 			0
+	// 	transition 		0.3s all ease-out
+
+	// &:before
+	// 	background 		$panel-background-colour
+	// 	bottom 			0
+	// 	content 		""
+	// 	left 			0
+	// 	opacity 		0
+	// 	position 		absolute
+	// 	right 			0
+	// 	top 			0
+	// 	transition		0.2s all ease-in
+	// 	z-index 		-1
+
+	// &--maximised-add
+	// 	&:before
+	// 		opacity 	1
+	// 		transition	none
+	// 		z-index 	10
+
+	// &--maximised-remove
+	// 	&:before
+	// 		opacity 	1
+	// 		transition	none
+	// 		z-index 	10
