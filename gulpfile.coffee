@@ -75,6 +75,9 @@ gulp.task "copy-files", ->
 	gulp.src "./app/darryl-snow-cv--english.pdf"
 	.pipe gulp.dest "./build"
 
+	gulp.src "./bower_components/packery/dist/packery.pkgd.js"
+	.pipe gulp.dest "./build/scripts"
+
 gulp.task "watch", ->
 	gulp.watch [
 		"./build/**/*.js"

@@ -1,3 +1,2 @@
-angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("scripts/panels.html","<div class=\"panels\"><div data-ng-include=\"\'scripts/intro/intro.html\'\" data-ng-controller=\"IntroCtrl\"></div><div data-ng-include=\"\'scripts/skills/skills.html\'\" data-ng-controller=\"SkillsCtrl\"></div></div>");
-$templateCache.put("scripts/intro/intro.html","<div class=\"panel\"><p>Intro</p><a href=\"/intro\">maximise</a><p>{{maximised}}</p></div>");
+angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("scripts/intro/intro.html","<p>Intro - {{hello}}</p><button resize-panel=\"resize-panel\">button</button>");
 $templateCache.put("scripts/skills/skills.html","<div class=\"panel\">Skills</div>");}]);

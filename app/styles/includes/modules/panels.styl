@@ -2,11 +2,19 @@
 	group()
 	background 				$white
 	box-shadow 				0 0.2em 0.2em rgba(black, 0.1)
-	margin 					$base-spacing-unit
+	//margin 					$base-spacing-unit
+	//height					50px
 	position 				relative
+	transition 				$fast-transition
+	//width					50px
 
 	&--transparent
 		background 			rgba($white, 0.4)
+
+	&--expanded
+		height				400px !important
+		transition 			$fast-transition
+		width				400px !important
 
 .panel-front
 	group()
