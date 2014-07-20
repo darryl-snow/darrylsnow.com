@@ -1,0 +1,69 @@
+.box
+	group()
+	transition 			0.3s all ease-in-out
+
+	&.loading
+		opacity 		0
+	
+	&--padded
+		padding			$base-spacing-unit
+
+	&--white
+		background 		$white
+
+	&--blue
+		background 		$blue
+		color 			$white
+
+	&--yellow
+		background 		lighten($yellow, 92%)
+
+	&--green
+		background 		$green
+		color 			lighten($green, 80%)
+
+	&--brown
+		background 		lighten($brown, 95%)
+		// border-top 		2px solid rgba($brown, 0.2)
+
+	&--email
+		background 		$cobalt
+		color 			$white
+
+		a
+			font-weight 		300
+
+			&:active,
+			&:focus,
+			&:hover
+				background 		$white
+				border 			0.2em solid $white
+				color 			$cobalt
+
+	&--phone
+		background 		$purple
+		color 			$white
+
+		a
+			font-weight 		300
+
+			&:active,
+			&:focus,
+			&:hover
+				background 		$white
+				border 			0.2em solid $white
+				color 			$purple
+
+	&--skype
+		background 		$skype
+		color 			$white
+
+		a
+			font-weight 		300
+
+			&:active,
+			&:focus,
+			&:hover
+				background 		$white
+				border 			0.2em solid $white
+				color 			$skype

@@ -1,0 +1,93 @@
+#intro.panel.panel-intro(data-ng-controller="IntroCtrl")
+
+  .panel-front
+
+    .box.box--padded
+
+      .intro-avatar
+        img.image.image--rounded(src="assets/images/darryl-snow.png")
+
+      .intro-text
+        h1 Darryl Snow
+          .subheading Web Expert
+
+        p I am a 
+          span.bold freelance 
+          | web designer, developer, and project manager with over 15 years' experience. I live in Kunming, South China, but can adjust to any time zone. I build websites and web apps for any device.
+
+        a.button.intro-download-cv(href="https://dl.dropboxusercontent.com/u/64335660/darryl-snow-cv--english.pdf", download="darryl-snow-cv--english.pdf", title="Download my CV")
+          svg.icon(viewBox="0 0 32 32")
+            use(xlink:href="#icon-install")
+          |  Download my CV
+
+        section.section(data-ng-show="maximised")
+          p I am originally from 
+            a(href="https://en.wikipedia.org/wiki/Jersey", title="Read more about Jersey at Wikipedia") Jersey
+              svg.icon.icon--small(viewBox="0 0 32 32")
+                use(xlink:href="#icon-link")
+            | , a small island near France. I went to university in Manchester, UK, and then moved to Beijing, China. I lived in Beijing for nearly 9 years where I worked in various web-related roles, and also for a few years as a 
+            a(href="http://www.youtube.com/watch?v=49utxEWw1ZI", title="See me in action on Youtube") national TV weatherman
+              svg.icon.icon--small(viewBox="0 0 32 32")
+                use(xlink:href="#icon-link")
+            | &ndash; despite having no meteorology experience, my surname got me the job! It's a great time to be living in China and after being here for so long I speak fairly fluent Chinese.
+          p At age 13 I turned down an art scholarship and took up programming in Visual Basic. By age 16 I had moved on to Perl and C++, had taken over my school computer network (for err&hellip; research&hellip;), and had also started my own web design company, just as the web was taking off. I studied Computer Science and Graphic Design at university so have both a technical and creative background.
+          p Today my preferred technology stack is Jade, Stylus, and CoffeeScript, with Gulp running tasks, NPM for package management, Browserify for tying in dependencies, Yeoman for scaffolding, Jasmine and PhantomJS for testing, and Git for version control and continuous deployment. My JavaScript framework of choice is AngularJS (used on this site) in the front and ExpressJS at the back. I work primarily on an iMac and a Macbook Pro, using Sublime Text 3 and the terminal. I design vector images using Adobe Illustrator and websites and web apps using the Chrome web browser, which has superb tools for debugging and measuring performance. You'll find more information about  
+            a(href="#skills", title="Find out more about what I can do") my skills and services here
+            | .
+          p Aside from the web, my other hobbies include 
+          .hobbies
+            .highlight beer
+            .highlight brewing
+            .highlight cooking
+            .highlight cycling
+            .highlight history
+            .highlight science
+            .highlight snooker
+
+    .button-group.intro-social-buttons
+      button.button.button--small.button-mail(data-ng-click="flip('down', 'email');", data-ng-class="{'active': back=='email' && flipped}")
+        svg.icon(viewBox="0 0 32 32")
+          use(xlink:href="#icon-mail")
+      button.button.button--small.button-phone(data-ng-click="flip('down', 'phone');", data-ng-class="{'active': back=='phone' && flipped}")
+        svg.icon(viewBox="0 0 32 32")
+          use(xlink:href="#icon-phone")
+      a.button.button--small.button-github(href="https://github.com/darryl-snow?tab=repositories", title="Browse my Github repositories")
+        svg.icon(viewBox="0 0 32 32")
+          use(xlink:href="#icon-github")
+      button.button.button--small.button-skype(data-ng-click="flip('down', 'skype');", data-ng-class="{'active': back=='skype' && flipped}")
+        svg.icon(viewBox="0 0 32 32")
+          use(xlink:href="#icon-skype")
+      a.button.button--small.button-twitter(href="https://twitter.com/dazsnow", title="Follow me on Twitter")
+        svg.icon(viewBox="0 0 32 32")
+          use(xlink:href="#icon-twitter")
+      a.button.button--small.button-googleplus(href="https://plus.google.com/+DarrylSnow/posts", title="Follow me on Google+")
+        svg.icon(viewBox="0 0 32 32")
+          use(xlink:href="#icon-googleplus")
+
+    button.button.button--small.toggle-expand-button(data-ng-click="maximise()")
+      svg.icon(viewBox="0 0 32 32")
+        use(xlink:href="#icon-resize-enlarge")
+
+  
+  .panel-back.panel-back--bottom
+
+    .box.box--padded.box--email(data-ng-show="back=='email'")
+      p My email is 
+        a.button.button--ghost(href="mailto:darryl@yourweb.expert", title="Email me!")
+          svg.icon(viewBox="0 0 32 32")
+            use(xlink:href="#icon-mail")
+          |  darryl@yourweb.expert
+
+    .box.box--padded.box--phone(data-ng-show="back=='phone'")
+      p My phone number is 
+        a.button.button--ghost(href="tel:+8618612009701", title="Phone me!")
+          svg.icon(viewBox="0 0 32 32")
+            use(xlink:href="#icon-phone")
+          |  +86 186-1200-9701
+
+    .box.box--padded.box--skype(data-ng-show="back=='skype'")
+      p My Skype username is 
+        a.button.button--ghost(href="callto://+darryl.snow", title="Skype me!")
+          svg.icon(viewBox="0 0 32 32")
+            use(xlink:href="#icon-skype")
+          |  darryl.snow

@@ -1,0 +1,46 @@
+.dropdown-list
+	@extends 		.unstyled-list
+	background 		lighten($black, 98%)
+	border 			1px solid lighten($black, 90%)
+	border-radius 	$button-border-radius
+	box-shadow 		0 2px 2px rgba($black, 0.3)
+	color 			$text-colour
+	display 		none
+	position 		absolute
+	right 			0
+	top 			100%
+
+	li
+		cursor 		pointer
+		padding 	0.5em
+
+		&:hover
+			background lighten($black, 92%)
+
+	&:after
+		border-left		8px solid transparent
+		border-right	8px solid transparent
+		border-bottom	8px solid lighten($black, 98%)
+		content 		""
+		height			0
+		left 			50%
+		margin-left 	-6px
+		position 		absolute
+		top 			-8px
+		width			0
+
+	&:before
+		border-left		9px solid transparent
+		border-right	9px solid transparent
+		border-bottom	9px solid lighten($black, 90%)
+		content 		""
+		height			0
+		left 			50%
+		margin-left 	-7px
+		position 		absolute
+		top 			-10px
+		width			0
+
+// .dropdown-toggle:active + .dropdown-list
+// 	display 		block
+

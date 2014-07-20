@@ -1,6 +1,7 @@
-*.bin
-*.pyc
-*.un~
 node_modules
-.DS_Store
-bower_components
+public
+.tmp
+.sass-cache
+client/bower_components
+dist
+/server/config/local.env.js

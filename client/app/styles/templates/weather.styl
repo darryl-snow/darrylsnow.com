@@ -1,0 +1,52 @@
+.weather
+	width 			40%
+
+.weather-icon
+	@extends 		.centred
+	display 		inline-block
+	vertical-algin 	middle
+	width 			50%
+
+.weather-info
+	@extends 		.centred
+	display 		inline-block
+	vertical-algin 	middle
+	width 			50%
+
+.weather-info-temperature
+	font-size 		6em
+
+.weather-info-temperature-range
+	font-size 		1.5em
+
+.weather-location
+	background 		$cobalt
+	color 			$white
+	display 		inline-block
+	height 			3em
+	line-height 	3em
+	padding 		0 1em
+	vertical-alignn middle
+	width 			50%
+
+.weather-time
+	@extends 		.centred
+	animation-name 				blink 
+	animation-iteration-count 	infinite 
+	animation-timing-function 	cubic-bezier(1.0,0,0,1.0)
+	animation-duration 			1s
+	background 		darken($text-colour,40%)
+	color 			$white
+	display 		inline-block
+	height 			3em
+	font-family 	$monospaced-font
+	line-height 	3em
+	vertical-alignn middle
+	width 			50%
+
+
+@keyframes blink
+	from
+		color 		$white
+	to
+		color 		$text-colour

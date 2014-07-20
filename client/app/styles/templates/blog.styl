@@ -1,0 +1,23 @@
+.panel-blog
+	width 				50%
+	width 				calc(50% - 10px)
+
+	h2
+		margin-top 		0
+
+.blog-button
+	@extends 			.centred
+
+.blog-post-content
+	max-height 			12em
+	overflow 			hidden
+	position 			relative
+
+	&:after
+		background 		linear-gradient(to bottom,  rgba($white, 0) 0%,#ffffff 90%)
+		bottom 			0
+		content 		""
+		height 			6em
+		left 			0
+		position 		absolute
+		width 			100%
