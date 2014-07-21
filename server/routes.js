@@ -12,6 +12,8 @@ module.exports = function(app) {
   app.use('/api/users', require('./api/user'));
   app.use('/api/tumblr', require('./api/tumblr'));
   app.use('/api/skills', require('./api/skills'));
+  app.use('/api/currencies', require('./api/currency'));
+  app.use('/api/weather', require('./api/weather'));
 
   app.use('/auth', require('./auth'));
 

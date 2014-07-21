@@ -1,6 +1,11 @@
 .panel-blog
-	width 				50%
-	width 				calc(50% - 10px)
+
+	width 				100%
+	width 				calc(100% - 10px)
+
+	@media $lap
+		width 			50%
+		width 			calc(50% - 10px)
 
 	h2
 		margin-top 		0
@@ -9,7 +14,7 @@
 	@extends 			.centred
 
 .blog-post-content
-	max-height 			12em
+	max-height 			15em
 	overflow 			hidden
 	position 			relative
 

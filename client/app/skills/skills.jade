@@ -1,0 +1,15 @@
+#skills.panel.panel-skills.panel--transparent(data-ng-controller="SkillsCtrl")
+
+  .panel-front
+    h2.panel-title What I do
+    .box.box--white.loading(data-ng-class="{'loading': !loaded}")
+      ul.menu
+        li(data-ng-repeat="skill in skills", data-ng-click="flip('right', skill.name);", data-ng-class="{'active': back == '{{skill.name}}' && flipped}") {{skill.name}}
+          svg.icon.icon--small(viewBox="0 0 20 20")
+            use(xlink:href="{{skill.icon}}")
+
+  .panel-back.panel-back--right
+    .box.box--padded.box--green
+      div(data-ng-repeat="skill in skills", data-ng-show="back == skill.name")
+        h3 {{skill.name}}
+        div(data-ng-bind-html="skill.description")

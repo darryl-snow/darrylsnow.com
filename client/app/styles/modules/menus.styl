@@ -11,10 +11,13 @@
 		padding 		1em
 		transition 		0.1s all ease-out
 
-		&.active,
 		&:hover
 			background 	lighten($brown, 95%)
 			border-left 5px solid $blue
+
+		&.active
+			background 	lighten($brown, 85%)
+			border-left 5px solid $green
 
 	.icon
 		float 			right

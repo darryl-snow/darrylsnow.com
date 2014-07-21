@@ -5,7 +5,8 @@ var mongoose = require('mongoose'),
 
 var SkillsSchema = new Schema({
   name: String,
-  description: String
+  description: String,
+  icon: String
 });
 
 module.exports = mongoose.model('Skills', SkillsSchema);

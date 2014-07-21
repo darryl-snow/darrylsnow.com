@@ -22,7 +22,7 @@ var all = {
   port: process.env.PORT || 9000,
 
   // Should we populate the DB with sample data?
-  seedDB: true,
+  seedDB: false,
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
@@ -63,6 +63,14 @@ var all = {
     clientID:     process.env.TUMBLR_ID || 'id',
     clientSecret: process.env.TUMBLR_SECRET || 'secret',
     callbackURL:  'http://localhost:9000/auth/tumblr/callback'
+  },
+
+  currency: {
+    clientID:     process.env.OPENEXCHANGE_ID || 'id'
+  },
+
+  weatheronline: {
+    clientID:     process.env.WEATHERONLINE_ID || 'id'
   }
 
 };

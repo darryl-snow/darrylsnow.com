@@ -1,16 +1,25 @@
-.weather
-	width 			40%
+.panel-weather
+	width 			100%
+	width 			calc(100% - 10px)
+
+	@media $lap
+		width 		40%
+		width 		calc(40% - 10px)
 
 .weather-icon
 	@extends 		.centred
 	display 		inline-block
-	vertical-algin 	middle
+	vertical-align 	middle
 	width 			50%
+
+	svg
+		height 		6em
+		width 		6em
 
 .weather-info
 	@extends 		.centred
 	display 		inline-block
-	vertical-algin 	middle
+	vertical-align 	middle
 	width 			50%
 
 .weather-info-temperature

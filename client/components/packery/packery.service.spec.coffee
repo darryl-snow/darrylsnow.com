@@ -7,8 +7,8 @@ describe 'Service: packery', ->
 
   # instantiate service
   packery = undefined
-  beforeEach inject((_packery_) ->
-    packery = _packery_
+  beforeEach inject((_PackeryService_) ->
+    packery = _PackeryService_
   )
   it 'should do something', ->
     expect(!!packery).toBe true

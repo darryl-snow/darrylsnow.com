@@ -1,16 +1,13 @@
 .panel
 	group()
-	background 				$white
 	box-shadow 				0 0.2em 0.2em rgba(black, 0.1)
 	//margin 					$base-spacing-unit
 	//height					50px
-	overflow 				hidden
+	// overflow 				hidden
+	margin-bottom 			$base-spacing-unit
 	position 				relative
 	transition 				$fast-transition
 	//width					50px
-
-	&--transparent
-		background 			rgba($white, 0.4)
 
 	&--maximised
 		width 				100% !important
@@ -36,10 +33,21 @@
 	transform-origin		50% 0%
 	width					100%
 
+.panel-back--right
+	height 					100%
+	left 					0
+	transform				translateX(0%)
+	transform-origin		0% 0%
+	z-index 				-1
+
 .flipdown
 	.panel-back--bottom
-		margin-bottom 		$base-spacing-unit
 		transform			perspective(350px) rotateX(0deg)
+		transition			0.2s linear 0s
+
+.flipright
+	.panel-back--right
+		transform			translateX(100%)
 		transition			0.2s linear 0s
 
 

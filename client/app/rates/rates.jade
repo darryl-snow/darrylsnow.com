@@ -1,0 +1,36 @@
+#rates.panel.rates(data-ng-controller="RatesCtrl")
+
+  .box.box--padded
+    h1 Rates
+    p I charge differently depending on the project requirements. I prefer to charge and invoice by week, rather than by hour and by month, respectively. As a rough guide, I charge about 
+      strong US$2,000 / week
+      | . I accept payments by paypal or direct bank transfer. If you have a project in mind and would like a detailed quotation, then please 
+      a(href="mailto:darryl@yourweb.expert", title="Send me an email to enquire about my rates") get in touch with me
+      | .
+    p
+      strong currency converter:
+    .button--full.button--icon
+      .button.button--blue.icon-button-text(data-ng-click="listOpen = !listOpen")
+        svg.icon.icon--small(viewBox="0 0 20 20")
+          use(xlink:href="{{icon}}")
+        span(data-ng-bind="value")
+      .button.button--blue.icon-button-icon(data-ng-click="listOpen = !listOpen")
+        svg.icon.icon--small(viewBox="0 0 20 20")
+          use(xlink:href="{{icon}}")
+      ul.dropdown-list(data-ng-show="listOpen")
+        li(data-ng-click="convert('USD');")
+          svg.icon.icon--small(viewBox="0 0 20 20")
+            use(xlink:href="#icon-dollar")
+          |  USD
+        li(data-ng-click="convert('GBP');")
+          svg.icon.icon--small(viewBox="0 0 20 20")
+            use(xlink:href="#icon-gbp")
+          |  GBP
+        li(data-ng-click="convert('EUR');")
+          svg.icon.icon--small(viewBox="0 0 20 20")
+            use(xlink:href="#icon-euro")
+          |  EUR
+        li(data-ng-click="convert('CNY');")
+          svg.icon.icon--small(viewBox="0 0 20 20")
+            use(xlink:href="#icon-cny")
+          |  CNY

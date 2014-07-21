@@ -87,13 +87,15 @@
 		padding 			0
 		position 			relative
 
+		.button
+			height 			26px
+
 .icon-button-text
 	border-radius 			$button-border-radius 0 0 $button-border-radius
 	border-right 			1px solid rgba($black, 0.2)
-	cursor 					default
 	padding 				0.3em 0.5em
 	text-align 				left
-	width 					calc(100% - 1em - 20px)
+	width 					calc(100% - 3em + 1px)
 
 	&:active
 		box-shadow 			0 4px 0 darken($blue, 15%)
@@ -107,7 +109,7 @@
 	position 				absolute
 	right 					0
 	top 					0
-	width 					calc(1em + 20px)
+	width 					3em
 
 .button-group
 	clear 					both
