@@ -1,0 +1,26 @@
+#book.panel.panel-book(data-ng-controller="BookCtrl")
+  .box.box--padded
+    .book-icon
+      svg.icon.icon--small(viewBox="0 0 20 20")
+        use(xlink:href="#icon-book")
+    h3
+      strong For a Better Web:
+      br
+      | The Ultimate Guide to Web Project Management
+    p My first book, due for release later in 2014, is all about web project management and is aimed at everyone involved in web projects from clients and managers to designers, developers, and testers.
+    div(data-ng-show="!success && !loading")
+      p
+        strong Sign up for email updates:
+      form(name="subscription")
+        .input-container
+          input#book-subscribe.input.input--full(type="email", name="book-subscribe", placeholder="yourem@il.com", data-ng-model="email", required)
+          svg.icon.icon--small(viewBox="0 0 20 20")
+            use(xlink:href="#icon-envelope-o")
+        button.button.button--full.button--blue(title="Subscribe for updates about my book", data-ng-click="subscribe()", data-ng-disabled="!subscription.$valid") Subscribe
+    .loader(data-ng-show="loading") Loading&hellip;
+    .book-success(data-ng-show="success")
+      h3 Thanks!
+      p I'll keep you posted
+    .book-error(data-ng-show="error")
+      h3 Uh-oh
+      p Looks like there was a problem&hellip; Please try again later&hellip;

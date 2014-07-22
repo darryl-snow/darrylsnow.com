@@ -57,3 +57,9 @@ label
 		&:last-of-type .input
 			border-bottom 	2px solid rgba($brown, 0.2)
 			border-radius 	0 0 $button-border-radius $button-border-radius
+
+.ng-valid:not(.ng-pristine)
+	border-color 		$green
+
+.ng-invalid:not(.ng-pristine)
+	border-color 		$red

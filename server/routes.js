@@ -14,6 +14,7 @@ module.exports = function(app) {
   app.use('/api/skills', require('./api/skills'));
   app.use('/api/currencies', require('./api/currency'));
   app.use('/api/weather', require('./api/weather'));
+  app.use('/api/subscribe', require('./api/subscribe'));
 
   app.use('/auth', require('./auth'));
 

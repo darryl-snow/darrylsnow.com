@@ -1,8 +1,13 @@
-.availability
+.panel-availability
 	group()
-	width 		40%
+	width 			100%
+	width 			calc(100% - 10px)
+
+	@media $lap
+		width 		40%
+		width 		calc(40% - 10px)
 
 	.calendar,
 	.tasks
-		float 	left
-		width 	50%
+		float 		left
+		width 		50%
