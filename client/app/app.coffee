@@ -6,7 +6,8 @@ angular.module('darrylsnowApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'angular-loading-bar'
+  'angular-loading-bar',
+  'ngMorph'
 ])
   .config (($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
     $urlRouterProvider
