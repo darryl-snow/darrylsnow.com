@@ -1,0 +1,51 @@
+img
+	height				auto
+	max-width			100%
+	
+.image
+	
+	&-block
+		display			block
+		margin			1em auto
+		
+
+section > svg
+	bottom				0
+	left				0
+	position			absolute
+
+.avatar
+	cursor				pointer
+	cursor				grab
+	height				10em
+	position			relative
+	width				10em
+	z-index				getZIndex("avatar")
+
+	&:hover
+		
+		.avatar-info
+			box-shadow	0 0 0 0.9em rgba($white, 0.4)
+
+		.avatar-image
+			transform	rotate(-110deg)
+
+.avatar-info,
+.avatar-image
+	border-radius		50%
+	height				100%
+	overflow			hidden
+	position			absolute
+	transition			all 0.3s ease-in-out
+	width				100%
+
+.avatar-info
+	background			$dark-red
+	box-shadow			0 0 0 0.8em rgba($white, 0.2)
+	color				$red
+	font-weight			500
+	line-height			10em
+	text-align			center
+
+.avatar-image
+	transform-origin	95% 40%

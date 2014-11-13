@@ -1,0 +1,24 @@
+ActiveFocusHover()
+	&.active
+	&:active,
+	&:focus,
+	&:hover
+		{block}
+		
+getZIndex(index)
+	$zindex[index]
+		
+group()
+
+	&:after
+		clear					both
+		content					""
+		display					table
+	
+inline-list()
+	li
+		display					inline-block
+		
+unstyled-list()
+	list-style					none
+	padding						0

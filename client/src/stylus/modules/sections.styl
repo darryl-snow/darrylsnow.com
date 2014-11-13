@@ -1,0 +1,57 @@
+section
+	padding					5em 10% 10em
+	position				relative
+	z-index					getZIndex("section")
+	
+	> *
+		z-index				getZIndex("content")
+	
+.section
+	&--red
+		background			$red
+		
+		a
+			color			$dark-red
+			
+		button
+			+ActiveFocusHover()
+				background	darken($red, 25%)
+		
+		.section-end
+			fill			$cobalt
+		
+	&--cobalt
+		background			$cobalt
+		
+		a
+			color			$dark-blue
+			
+		button
+			+ActiveFocusHover()
+				background	darken($cobalt, 25%)
+		
+		.section-end
+			fill			$blue
+		
+	&--blue
+		background			$blue
+		
+		a
+			color			$black
+			
+		button
+			+ActiveFocusHover()
+				background	darken($blue, 25%)
+
+		.section-end
+			fill			$black
+		
+	&--black
+		background			$black
+		
+		a
+			color			$green
+			
+		button
+			+ActiveFocusHover()
+				background	darken($black, 25%)

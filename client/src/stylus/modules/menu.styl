@@ -1,0 +1,150 @@
+.menu-toggle
+	background					transparent
+	border						none
+	box-shadow					none
+	color						$white
+	cursor						pointer
+	display						block
+	font-size					0.85em
+	font-weight					800
+	height						45px
+	left						0
+	opacity						0.7
+	outline						none
+	overflow					hidden
+	position					fixed
+	text-align					left
+	text-transform				uppercase
+	top							0
+	transition					opacity 0.2s ease-in-out
+	width						100px
+	z-index						getZIndex("menuToggle")
+
+	+ActiveFocusHover()
+		opacity					1
+
+	svg
+		height					80px
+		margin					-20px 0 0 -25px
+		pointer-events			none
+		vertical-align			-33px
+		width					80px
+
+	path
+		fill					none
+		stroke					$white
+		stroke-dashoffset		0
+		stroke-linecap			straight
+		stroke-width			40px
+		transition				stroke-dashoffset 0.5s cubic-bezier(0.250,-0.250, 0.750, 1.250),
+								stroke-dasharray 0.5s cubic-bezier(0.250,-0.250, 0.750, 1.250)
+
+	&.open
+		opacity					1
+
+		.menu-toggle-top,
+		.menu-toggle-bottom
+			stroke-dashoffset	-650px
+			stroke-dashoffset	-650px
+			
+		.menu-toggle-middle
+			stroke-dashoffset	-115px
+			stroke-dasharray	1px 220px
+
+.menu-toggle-top,
+.menu-toggle-bottom
+	stroke-dasharray			240px 950px
+
+.menu-toggle-middle
+	stroke-dasharray			240px 240px
+
+.menu-toggle-text
+	margin-left					-20px
+
+.perspective
+	background					$orange
+	height						100%
+	position					relative
+	width						100%
+
+	&.open
+		position				fixed
+		perspective				1500px
+
+		.container
+			backface-visibility	hidden
+			cursor				pointer
+			position			absolute
+			height				100%
+			overflow			hidden
+			transform			translateZ(-1800px) translateX(50%) rotateY(-45deg)
+			width 				100%
+				
+		.cover
+			opacity				0.6
+			pointer-events		auto
+
+		.menu
+			pointer-events		auto
+
+		.menu a
+			opacity				1
+			transform			translateX(0) translateZ(0)
+			
+			&:nth-child(2)
+				transition-delay	0.04s
+
+			&:nth-child(3)
+				transition-delay	0.08s
+
+			&:nth-child(4)
+				transition-delay	0.12s
+
+.container
+	background					$white
+	// min-height					100%
+	transform					translateZ(0) translateX(0) rotateY(0deg)
+	transform-origin			0% 50%
+	transition					transform 0.4s
+	z-index						getZIndex("container")
+
+.cover
+	background					$white
+	height						100%
+	left						0
+	opacity						0
+	pointer-events				none
+	position					fixed
+	top							0
+	transition					opacity 0.4s
+	width						100%
+	z-index						getZIndex("cover")
+
+.menu
+	font-size					2em
+	height						auto
+	left						25%
+	pointer-events				none
+	position					absolute
+	top							50%
+	transform					translateY(-50%)
+	transform-style				preserve-3d
+	width						6.8em
+	
+	a
+		color					$white
+		display					block
+		font-weight				200
+		margin					0 0 30px 0
+		opacity					0
+		text-decoration			none
+		transform				translateX(-350px) translateZ(-1000px)
+		transform-style			preserve-3d
+		transition				transform 0.4s, opacity 0.4s, color 0.4s
+		white-space				nowrap
+		
+		+ActiveFocusHover()
+			color				lighten($orange, 50%)
+			
+	svg
+		margin-right			0.5em

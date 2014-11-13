@@ -1,0 +1,55 @@
+.modal.modal--black#modal-wechat
+	.modal-content
+		h2 Scan this QR code to add me on Wechat / 微信
+		img.image-block(src="images/wechat-qr-code.jpg", alt="My Wechat QR code")
+		button.button.button-small.js-modal-close(data-modal="wechat") close
+			svg.icon(viewBox="0 0 32 32")
+				use(xlink:href="#icon-times")
+
+.modal.modal--green#modal-aboutme
+
+	button.button.button-icon.js-modal-close(data-modal="aboutme")
+		svg.icon(viewBox="0 0 32 32")
+			use(xlink:href="#icon-times")
+
+	.modal-content
+		h2 Fun Facts About Me
+
+		ul.carousel.js-carousel--automatic#carousel-aboutme
+			li.carousel-item I grew up on the tiny Island of 
+				a.link(href="http://en.wikipedia.org/wiki/Jersey", title="Find out more about Jersey") Jersey
+				| , near France
+			li.carousel-item I made my first website when I was 
+				strong 13 years old
+			li.carousel-item I started my first business when I was 
+				strong 16 years old
+			li.carousel-item I studied computer science at the 
+				a.link(href="https://en.wikipedia.org/wiki/School_of_Computer_Science,_University_of_Manchester", title="Read more about UMSoC") University of Manchester
+			li.carousel-item I studied graphic design at 
+				a.link(href="https://en.wikipedia.org/wiki/Central_Saint_Martins", title="Read more about Central St. Martins") Central St. Martins 
+				| in London
+			li.carousel-item I moved to Beijing a year after university and stayed there for 
+				strong 9 years
+			li.carousel-item In Beijing I've worked as a graphic designer, flash developer, exam invigilator, web designer, physics teacher, PHP developer, account manager, project manager, QA tester, studio manager, products manager, and full-stack developer
+			li.carousel-item For a while I also worked as a 
+				a.link(href="https://www.youtube.com/watch?v=_6wp353y-AY", title="Watch one of my forecasts") national TV weatherman 
+				| for China's state broadcaster, all thanks to my name
+			li.carousel-item I speak and read Chinese fluently; my Chinese name is 雪龘龍
+			li.carousel-item In 2010 I collaborated on the planning, design, development, abd release of an 
+				a.link(href="http://www.148apps.com/news/munch-5aday-doctor/", title="Find out more about the iOS app I produced") iOS app
+				| ; It was featured as 'App of the Week' on app stores throughout Europe before 2 weeks running before we successfully sold it
+			li.carousel-item In 2014 I moved to 
+				a.link(href="http://en.wikipedia.org/wiki/Kunming", title="Read more about Kunming") Kunming
+				|, the “Spring City”, in China's far South-West where the skies are clear and the food is spicy, just the way I like it
+			li.carousel-item Apart from web-geekery, I also enjoy:
+				ul.interests
+					li Beer
+					li Brewing
+					li Science
+					li History
+					li Tea
+					li Cycling
+					li Snooker
+
+.modal-overlay.modal-overlay--black
+.modal-overlay.modal-overlay--green

@@ -1,0 +1,44 @@
+.contact-list
+	inline-list()
+	unstyled-list()
+	
+	a
+		background			rgba($white,0.1)
+		border-radius		50%
+		color				$white !important
+		cursor				pointer
+		display				block
+		height				4em
+		line-height			4em
+		margin				0.5em
+		position			relative
+		text-align			center
+		transition			background 0.2s, color 0.2s
+		width				4em
+			
+		&:after
+			border-radius	50%
+			box-shadow		0 0 0 4px $white
+			content			""
+			height			100%
+			left			-7px
+			opacity			0
+			padding			7px
+			pointer-events	none
+			position		absolute
+			top				-7px
+			transform		scale(.8)
+			transition		transform 0.2s, opacity 0.2s
+			width			100%
+			
+		+ActiveFocusHover()
+			background	$white
+			color		$red !important
+			
+			&:after
+				opacity		1
+				transform	scale(1)
+			
+	.icon
+		height			32px
+		width			32px

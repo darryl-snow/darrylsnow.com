@@ -1,0 +1,65 @@
+.modal
+	height				auto
+	left				50%
+	max-height			100%
+	max-width			100%
+	min-width			320px
+	opacity				0
+	// overflow-y			scroll
+	pointer-events		none
+	position			fixed
+	top					50%
+	transform			translateX(-50%) translateY(-50%)
+	visibility			hidden
+	width				50%
+	z-index				getZIndex("modal")
+	
+	&-show
+		opacity			1
+		pointer-events	auto
+		visibility		visible
+			
+		.modal-content
+			opacity		1
+			transform	scale(1)
+			
+	&--black
+		&.modal-show
+			& ~ .modal-overlay--black
+				opacity		1
+				visibility	visible
+				
+	&--green
+
+		.link
+			color		$grey
+		
+		&.modal-show
+
+			& ~ .modal-overlay--green
+				opacity		1
+				visibility	visible
+		
+.modal-overlay
+	background			$black
+	height				100%
+	left				0
+	opacity				0
+	position			fixed
+	top					0
+	transition			all 0.3s
+	width				100%
+	visibility			hidden
+	z-index				getZIndex("modalOverlay")
+	
+	&--green
+		background		$dark-green
+
+.modal-content
+	background			transparent
+	color				$white
+	opacity				0
+	position			relative
+	text-align			center
+	transform			scale(0.8)
+	transition			all 0.3s

@@ -1,0 +1,121 @@
+@import	url("http://fonts.googleapis.com/css?family=Raleway:500,800,700,200")
+
+@font-face
+	font-family					"Raleway"
+	font-style					normal
+	font-weight					200
+	src							local("Raleway ExtraLight"), local("Raleway-ExtraLight"), url(http://fonts.gstatic.com/s/raleway/v9/8KhZd3VQBtXTAznvKjw-kwsYbbCjybiHxArTLjt7FRU.woff2) format("woff2")
+	unicode-range				U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+
+@font-face
+	font-family					"Raleway"
+	font-style					normal
+	font-weight					500
+	src							local("Raleway Medium"), local("Raleway-Medium"), url(http://fonts.gstatic.com/s/raleway/v9/CcKI4k9un7TZVWzRVT-T8wsYbbCjybiHxArTLjt7FRU.woff2) format("woff2")
+	unicode-range				U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+
+@font-face
+	font-family					"Raleway"
+	font-style					normal
+	font-weight					700
+	src							local("Raleway Bold"), local("Raleway-Bold"), url(http://fonts.gstatic.com/s/raleway/v9/JbtMzqLaYbbbCL9X6EvaIwsYbbCjybiHxArTLjt7FRU.woff2) format("woff2")
+	unicode-range				U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+
+@font-face
+	font-family					"Raleway"
+	font-style					normal
+	font-weight					800
+	src							local("Raleway ExtraBold"), local("Raleway-ExtraBold"), url(http://fonts.gstatic.com/s/raleway/v9/1ImRNPx4870-D9a1EBUdPAsYbbCjybiHxArTLjt7FRU.woff2) format("woff2")
+	unicode-range				U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+
+html
+	font-family					sans-serif
+	// text-rendering				optimizeLegibility
+	-ms-text-size-adjust		100%
+	-webkit-text-size-adjust	100%
+	-webkit-font-smoothing		subpixel-antialiased
+
+body
+	font-family					"Raleway", Arial, sans-serif
+	font-size					1em
+	font-weight					500
+	
+.link
+	color						inherit
+	font-weight					800
+	font-size					0.85em
+	padding						0.6em
+	position					relative
+	text-decoration				none
+	text-transform				uppercase
+	transition					color 0.3s
+	
+	&:before,
+	&:after
+		background				$white
+		content					""
+		height					2px
+		left					0
+		opacity					0
+		position				absolute
+		transition				opacity 0.3s, transform 0.3s
+		width					100%
+		
+	&:before
+		top						0
+		transform				translateY(-0.6em)
+		
+	&:after
+		bottom					0
+		transform				translateY(0.6em)
+	
+	+ActiveFocusHover
+		color					$white
+	
+	&:hover
+		&:before,
+		&:after
+			opacity				1
+			transform			translateY(0)
+
+.interests
+	inline-list()
+	unstyled-list()
+	
+	li
+		background				rgba($white, 0.8)
+		border-radius			0.3em
+		color					$dark-green
+		display					inline-block
+		font-weight				700
+		font-size				0.8em
+		padding					0.1em 0.4em
+		margin					0.4em 0.2em
+		text-transform			uppercase
+
+h1
+	font-size					4.5em
+	font-weight					800
+	line-height					1
+	
+h2
+	font-size					3em
+	font-weight					800
+	line-height					1
+	
+p
+	line-height					1.7
+
+.subheading
+	font-size					50%
+	font-weight					200
+	opacity						0.6
+	padding-top					0.325em
+
+.strikethrough
+	text-decoration				line-through
+	
+.align
+	
+	&--left
+		text-align				left !important

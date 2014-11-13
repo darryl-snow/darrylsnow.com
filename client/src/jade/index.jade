@@ -1,0 +1,50 @@
+extends templates/master
+
+block title
+	| Darryl Snow &ndash; Web designer, developer, and project manager based in Kunming, China
+
+block styles
+
+block content
+
+	button.menu-toggle
+		svg(viewBox="0 0 800 600")
+			path.menu-toggle-top(d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200")
+			path.menu-toggle-middle(d="M300,320 L540,320")
+			path.menu-toggle-bottom(d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190", transform="translate(480, 320) scale(1, -1) translate(-480, -318) ")
+		span.menu-toggle-text Menu
+
+	button.button.button-extrasmall.button-login Login
+		svg.icon(viewBox="0 0 32 32")
+			use(xlink:href="#icon-lock")
+
+	include includes/modals
+
+	.perspective
+		.container
+			.cover
+
+			include includes/about
+			include includes/work
+			include includes/book
+			include includes/blog
+
+		nav.menu
+			a(href="#about", title="about me and how to get in contact")
+				svg.icon(viewbox="0 0 32 32")
+					use(xlink:href="#icon-user")
+				| About me
+			a(href="#work", title="my skills & services, rates, and availability")
+				svg.icon(viewbox="0 0 32 32")
+					use(xlink:href="#icon-briefcase")
+				| My work
+			a(href="#book", title="find out about my upcoming book")
+				svg.icon(viewbox="0 0 32 32")
+					use(xlink:href="#icon-book")
+				| My book
+			a(href="#blog", title="read my random trail of thoughts")
+				svg.icon(viewbox="0 0 32 32")
+					use(xlink:href="#icon-pencil")
+				| My blog
+
+block scripts
