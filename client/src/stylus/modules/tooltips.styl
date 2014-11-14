@@ -3,10 +3,11 @@
 	cursor			help
 	display			inline-block
 	margin			0 0.2em
+	padding			0.2em
 	position		relative
 	z-index			getZIndex("tooltip")
 		
-	&:hover
+	+ActiveFocusHover()
 		
 		.tooltip-content
 			opacity				1
@@ -56,8 +57,9 @@
 	border-bottom	10px solid $white
 	color			$white
 	display			block
-	font-size		1.5em
+	font-size		1em
 	font-weight		200
+	line-height		1.67
 	overflow		hidden
 	text-transform	none
 	transform		scale3d(0,1,1)

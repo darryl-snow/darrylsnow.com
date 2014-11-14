@@ -1,0 +1,86 @@
+$border = 2px dotted rgba($white,0.5)
+
+.component
+	@extends				.left
+	border-bottom			none
+	border-left				none
+	border-right			none
+	border-top				$border
+	min-height 				375px
+	position				relative
+	width					100%
+
+	@media (min-width:60em)
+		border-bottom		none
+		border-left			none
+		border-right		none
+		border-top			none
+		width				50%
+		
+		&:nth-child(2)
+			border-left		$border
+		
+		&:nth-child(3)
+			border-top		$border
+			
+		&:nth-child(4)
+			border-left		$border
+			border-top		$border
+		
+	@media (min-width:100em)
+		border-bottom		none
+		border-left			$border
+		border-right		none
+		border-top			none
+		width				25%
+		
+		&:nth-child(3)
+			border-top		none
+			
+		&:nth-child(4)
+			border-top		none
+	
+	h3
+		opacity				0.3
+
+	&-content
+		left				0
+		padding				1em
+		position			absolute
+		text-align			center
+		top					50%
+		transform			translateY(-50%)
+		width				100%
+		
+.work-right
+
+	.component
+
+		&:first-child
+			border			none
+			
+.blog-right
+
+	.component
+		border-bottom		none
+		border-left			none
+		border-right		none
+		border-top			$border
+		margin				2em 0 0 0
+		width				100%
+		
+		@media (min-width: 60em)
+			border-bottom	none
+			border-left		$border
+			border-right	none
+			border-top		none
+			margin			0 0 0 2em
+			width			100%
+
+		@media (min-width: 100em)
+			border-bottom	none
+			border-left		$border
+			border-right	none
+			border-top		none
+			margin			0 0 0 2em
+			width			100%

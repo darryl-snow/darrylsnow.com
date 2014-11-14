@@ -48,6 +48,7 @@ body
 	position					relative
 	text-decoration				none
 	text-transform				uppercase
+	transform-style				preserve-3d
 	transition					color 0.3s
 	
 	&:before,
@@ -59,6 +60,7 @@ body
 		opacity					0
 		position				absolute
 		transition				opacity 0.3s, transform 0.3s
+		transform-style			preserve-3d
 		width					100%
 		
 	&:before
@@ -78,20 +80,13 @@ body
 			opacity				1
 			transform			translateY(0)
 
-.interests
-	inline-list()
-	unstyled-list()
-	
-	li
-		background				rgba($white, 0.8)
-		border-radius			0.3em
-		color					$dark-green
-		display					inline-block
-		font-weight				700
-		font-size				0.8em
-		padding					0.1em 0.4em
-		margin					0.4em 0.2em
-		text-transform			uppercase
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	margin-top					0
 
 h1
 	font-size					4.5em
@@ -105,6 +100,12 @@ h2
 	
 p
 	line-height					1.7
+	
+blockquote
+	background					rgba($white,0.1)
+	font-style					italic
+	margin						0 0 2em 0
+	padding						1em
 
 .subheading
 	font-size					50%
@@ -119,3 +120,9 @@ p
 	
 	&--left
 		text-align				left !important
+		
+	&--right
+		text-align				right !important
+		
+	&--centre
+		text-align				center !important

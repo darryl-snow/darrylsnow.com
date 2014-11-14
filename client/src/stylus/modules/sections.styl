@@ -1,4 +1,5 @@
 section
+	group()
 	padding					5em 10% 10em
 	position				relative
 	z-index					getZIndex("section")
@@ -10,7 +11,7 @@ section
 	&--red
 		background			$red
 		
-		a
+		.link
 			color			$dark-red
 			
 		button
@@ -23,7 +24,7 @@ section
 	&--cobalt
 		background			$cobalt
 		
-		a
+		.link
 			color			$dark-blue
 			
 		button
@@ -36,7 +37,7 @@ section
 	&--blue
 		background			$blue
 		
-		a
+		.link
 			color			$black
 			
 		button
@@ -49,9 +50,12 @@ section
 	&--black
 		background			$black
 		
-		a
+		.link
 			color			$green
 			
 		button
 			+ActiveFocusHover()
 				background	darken($black, 25%)
+				
+	&-end
+		width 				100%

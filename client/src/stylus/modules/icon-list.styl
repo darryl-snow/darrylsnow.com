@@ -1,4 +1,4 @@
-.contact-list
+.icon-list
 	inline-list()
 	unstyled-list()
 	
@@ -39,6 +39,16 @@
 				opacity		1
 				transform	scale(1)
 			
+	&--red
+		a
+			+ActiveFocusHover()
+				color		$red !important
+				
+	&--cobalt
+		a
+			+ActiveFocusHover()
+				color		$cobalt !important
+
 	.icon
-		height			32px
-		width			32px
+		height				32px
+		width				32px

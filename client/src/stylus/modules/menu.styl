@@ -77,8 +77,11 @@
 			position			absolute
 			height				100%
 			overflow			hidden
-			transform			translateZ(-1800px) translateX(50%) rotateY(-45deg)
+			transform			translateZ(-1800px) translateX(100%) rotateY(-65deg)
 			width 				100%
+			
+			@media (min-width: 60em)
+				transform		translateZ(-1800px) translateX(50%) rotateY(-45deg)
 				
 		.cover
 			opacity				0.6
@@ -123,13 +126,16 @@
 .menu
 	font-size					2em
 	height						auto
-	left						25%
+	left						10%
 	pointer-events				none
 	position					absolute
 	top							50%
 	transform					translateY(-50%)
 	transform-style				preserve-3d
 	width						6.8em
+	
+	@media (min-width: 60em)
+		left					25%
 	
 	a
 		color					$white

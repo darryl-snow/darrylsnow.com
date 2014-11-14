@@ -8,3 +8,20 @@ a
 	svg,
 	use
 		pointer-events		none
+		
+.left
+	float					left
+	
+.right
+	float					right
+	
+.half
+	margin-top				2em
+	width					100%
+	
+	&:first-of-type
+		margin-top			0
+	
+	@media (min-width: 60em)
+		margin-top			0
+		width				50%
