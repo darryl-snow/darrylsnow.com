@@ -1,19 +1,19 @@
-.modal.modal--black#modal-wechat
+.modal.modal--black#modal-wechat(aria-hidden="true", role="dialog", aria-labelledby="modal-wechat-header", tabindex="-1")
 	.modal-content
-		h2 Scan this QR code to add me on Wechat / 微信
+		h2#wechat-modal-header Scan this QR code to add me on Wechat / 微信
 		img.image-block(src="images/wechat-qr-code.jpg", alt="My Wechat QR code")
 		button.button.button-small.js-modal-close(data-modal="wechat") close
 			svg.icon(viewBox="0 0 32 32")
 				use(xlink:href="#icon-times")
 
-.modal.modal--green#modal-aboutme
+.modal.modal--green#modal-aboutme(aria-hidden="true", role="dialog", aria-labelledby="modal-aboutme-header", tabindex="-1")
 
 	button.button.button-icon.js-modal-close(data-modal="aboutme")
 		svg.icon(viewBox="0 0 32 32")
 			use(xlink:href="#icon-times")
 
 	.modal-content
-		h2 Fun Facts About Me
+		h2#modal-aboutme-header Fun Facts About Me
 
 		ul.carousel.js-carousel--automatic#carousel-aboutme
 			li.carousel-item I grew up on the tiny Island of 
@@ -51,5 +51,5 @@
 					li Cycling
 					li Snooker
 
-.modal-overlay.modal-overlay--black
-.modal-overlay.modal-overlay--green
+.modal-overlay.modal-overlay--black(aria-hidden="true")
+.modal-overlay.modal-overlay--green(aria-hidden="true")

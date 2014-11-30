@@ -1,133 +1,143 @@
-section#work.section--cobalt
-	h2 What I do
-		.subheading and have been doing for over 15 years
+section#work.section--cobalt(role="region", aria-labelledby="work-heading", itemscope, itemtype="http://data-vocabulary.org/Product")
 
-	.work-left
+	.slide-in
 
-		ul.services
-			li
-				a.tooltip UI/UX Design
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner Wireframes, Styleguides, Interactive Prototypes
-			li
-				a.tooltip Front-end Development
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner HTML, CSS, &amp; JavaScript
-			li
-				a.tooltip Back-end Development
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner JavaScript, Ruby, PHP, Python
-			li
-				a.tooltip Mobile Apps
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner Web-based iOS/Android apps
-			li
-				a.tooltip Responsive Design
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner Device-agnostic websites and apps
-			li
-				a.tooltip Testing
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner QA, Usability, Accessibility, SEO
-			li
-				a.tooltip Project Management
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner Planning and overseeing design, development, and testing
-			li
-				a.tooltip Consultancy
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner Critiques, Suggestions &amp; recommendations
-			li
-				a.tooltip Workshops
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner Technical training
-			li
-				a.tooltip Wordpress
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner CMS integration, Custom theme development
-			li
-				a.tooltip AngularJS
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner Scalable, data-driven web apps
-			li
-				a.tooltip Dev Ops
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner Server setup, Environment management, Continuous integration
-			li
-				a.tooltip NodeJS
-					span.tooltip-content
-						span.tooltip-text
-							span.tooltip-inner APIs using ExpressJS
+		h2#work-heading.slide-in-left-1 What I do
+			.subheading and have been doing for over 15 years
 
-	.work-right
+		meta(itemprop="name", content="Darryl Snow")
+		meta(itemprop="description", content="Professional design, development, and project management for websites & web apps")
+		meta(itemprop="category", content="Software")
 
-		.component
-			.component-content
-				.calendar
-					.calendar-day Friday
-					.calendar-date 14
-					.calendar-monthandyear November, 2014
+		.work-left.slide-in-left-2
 
-		.component
-			.component-content
-				.availability
-					h3 Today I am:
-					.availability-activity working on Diageo Horizon
-					a.link(href="mailto:darryl@yourweb.expert", title="Email me") Ask about my availability
+			ul.services
+				li
+					a.tooltip(aria-describedby="tooltip1") UI/UX Design
+						span#tooltip1.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner Wireframes, Styleguides, Interactive Prototypes
+				li
+					a.tooltip(aria-describedby="tooltip2") Front-end Development
+						span#tooltip2.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner HTML, CSS, &amp; JavaScript
+				li
+					a.tooltip(aria-describedby="tooltip3") Back-end Development
+						span#tooltip3.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner JavaScript, Ruby, PHP, Python
+				li
+					a.tooltip(aria-describedby="tooltip4") Mobile Apps
+						span#tooltip4.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner Web-based iOS/Android apps
+				li
+					a.tooltip(aria-describedby="tooltip5") Responsive Design
+						span#tooltip5.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner Device-agnostic websites and apps
+				li
+					a.tooltip(aria-describedby="tooltip6") Testing
+						span#tooltip6.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner QA, Usability, Accessibility, SEO
+				li
+					a.tooltip(aria-describedby="tooltip7") Project Management
+						span#tooltip7.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner Agile planning and overseeing design, development, and testing
+				li
+					a.tooltip(aria-describedby="tooltip8") Consultancy
+						span#tooltip8.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner Critiques, Suggestions &amp; recommendations
+				li
+					a.tooltip(aria-describedby="tooltip9") Workshops
+						span#tooltip9.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner Technical training
+				li
+					a.tooltip(aria-describedby="tooltip10") Wordpress
+						span#tooltip10.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner CMS integration, Custom theme development
+				li
+					a.tooltip(aria-describedby="tooltip11") AngularJS
+						span#tooltip11.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner Scalable, data-driven web apps
+				li
+					a.tooltip(aria-describedby="tooltip12") Dev Ops
+						span#tooltip12.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner Server setup, Environment management, Continuous integration
+				li
+					a.tooltip(aria-describedby="tooltip13") NodeJS
+						span#tooltip13.tooltip-content(role="tooltip")
+							span.tooltip-text
+								span.tooltip-inner APIs using ExpressJS
 
-		.component
-			.component-content
-				.rates
-					h3 My Daily Rate
-					.rates-number
-						small.rates-number-currency USD
-						| $600
-					.rates-conversions
-						ul.icon-list.icon-list--cobalt
-							li
-								a.js-convert-currency.active(data-currency="usd", title="Convert rate to USD")
-									svg.icon(viewBox="0 0 32 32")
-										use(xlink:href="#icon-dollar")
-							li
-								a.js-convert-currency(data-currency="eur", title="Convert rate to EUR")
-									svg.icon(viewBox="0 0 32 32")
-										use(xlink:href="#icon-euro")
-							li
-								a.js-convert-currency(data-currency="gbp", title="Convert rate to GBP")
-									svg.icon(viewBox="0 0 32 32")
-										use(xlink:href="#icon-gbp")
-							li
-								a.js-convert-currency(data-currency="cny", title="Convert rate to CNY")
-									svg.icon(viewBox="0 0 32 32")
-										use(xlink:href="#icon-cny")
-					a.link(href="mailto:darryl@yourweb.expert", title="Email me") Ask about my rates
+		aside.work-right.slide-in-right-2
 
-		.component
-			.component-content
-				.clients
-					h3 Some of my clients
-					ul.carousel
-						li.carousel-item
-							svg.icon(viewBox="0 0 32 32")
-								use(xlink:href="#icon-apple")
-						li.carousel-item
-							svg.icon(viewBox="0 0 32 32")
-								use(xlink:href="#icon-apple")
-						li.carousel-item
-							svg.icon(viewBox="0 0 32 32")
-								use(xlink:href="#icon-apple")
+			.component(role="note")
+				.component-content
+					.calendar
+						.calendar-day
+						.calendar-date
+						.calendar-monthandyear
 
-	svg.section-end(xmlns="http://www.w3.org/2000/svg", version="1.1", width="100%", height="100", viewBox="0 0 100 100", preserveAspectRatio="none")
+			.component(role="note")
+				.component-content
+					.availability
+						h3 Today I am:
+						.availability-activity working on Diageo Horizon
+						a.link(href="mailto:darryl@yourweb.expert", title="Email me") Ask about my availability
+
+			.component(role="note", itemprop="offers", itemscope itemtype="http://schema.org/Offer")
+				.component-content
+					.rates
+						h3 My Weekly Rate
+						.rates-number
+							small.rates-number-currency(itemprop="priceCurrency", content="$") usd
+							span.rates-number-rate(itemprop="price", content="600.00") $2000
+						.rates-conversions
+							ul.icon-list.icon-list--cobalt
+								li
+									a.js-convert-currency.active(data-currency="USD", title="Convert rate to USD")
+										svg.icon(viewBox="0 0 32 32")
+											use(xlink:href="#icon-dollar")
+								li
+									a.js-convert-currency(data-currency="EUR", title="Convert rate to EUR")
+										svg.icon(viewBox="0 0 32 32")
+											use(xlink:href="#icon-euro")
+								li
+									a.js-convert-currency(data-currency="GBP", title="Convert rate to GBP")
+										svg.icon(viewBox="0 0 32 32")
+											use(xlink:href="#icon-gbp")
+								li
+									a.js-convert-currency(data-currency="CNY", title="Convert rate to CNY")
+										svg.icon(viewBox="0 0 32 32")
+											use(xlink:href="#icon-cny")
+						a.link(href="mailto:darryl@yourweb.expert", title="Email me") Ask about my rates
+
+			.component(role="note")
+				.component-content
+					.clients
+						h3 Some of my clients
+						ul.carousel
+							li.carousel-item
+								svg.icon(viewBox="0 0 32 32")
+									use(xlink:href="#icon-apple")
+							li.carousel-item
+								svg.icon(viewBox="0 0 60 32")
+									use(xlink:href="#cctv")
+							li.carousel-item
+								svg.icon(viewBox="0 0 60 32")
+									use(xlink:href="#diageo")
+							li.carousel-item
+								svg.icon(viewBox="0 0 32 32")
+									use(xlink:href="#unionpay")
+
+	svg.section-end(xmlns="http://www.w3.org/2000/svg", version="1.1", width="100%", height="100", viewBox="0 0 100 100", preserveAspectRatio="none", role="separator")
 		path(d="M100,100V0C80.029,100,50.075,100,0.149,0H0v100H100z")

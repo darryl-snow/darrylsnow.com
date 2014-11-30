@@ -98,7 +98,7 @@ UserSchema.methods =
 	# @api public
 	
 	authenticate: (plainText) ->
-		this.encryptPassword plainText is this.hashedPassword
+		this.encryptPassword(plainText) == this.hashedPassword
 	,
 
 	

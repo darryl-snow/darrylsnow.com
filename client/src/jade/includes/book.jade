@@ -1,20 +1,30 @@
-section#book.section--blue
+section#book.section--blue(role="region", aria-labelledby="e-book-heading", itemscope, itemtype="http://schema.org/Book")
+	.slide-in
 
-	.left.half
-		img(src="images/book.jpg", alt="For a Better Web: The Ultimate Guide to Web Project Management")
+		.left.half.slide-in-left-1
 
-	.right.half
+			meta(itemprop="name", content="For a Better Web")
+			meta(itemprop="description", content="The Ultimate Guide to Web Project Management")
+			meta(itemprop="category", content="Media > Books > Non-Fiction")
+			meta(itemprop="author", content="Darryl Snow")
+			meta(itemprop="inLanguage", content="English")
+			meta(itemprop="bookFormat", content="Ebook")
 
-		h2 My Book
-			.subheading Due for release early 2015
+			img(src="images/book.jpg", alt="For a Better Web: The Ultimate Guide to Web Project Management", itemprop="image")
 
-		p Building great websites and web apps is hard. It's not because the technology is too complex or that it's moving too fast, or that there is a shortage of good designers, developers, project managers, or other roles. Indeed the major challenges are in trying to get these roles to work together in harmony. Despite the fast pace of the web industry, many organisations struggle to adapt their production processes in a way that can harness all the skills and knowledge required to make a great website or app in an effective way.
-		p My book covers the workflow processes and roles required to produce such a project, where they overlap, and how they can be optimised to be conducive to the best possible product.
-		p It's due for release in Q1 2015 and will be published as an e-book on Amazon. If you'd like to be notified when it's released, please subscribe for updates below.
+		article.right.half
 
-		button.button.js-subscribe-button subscribe for updates
-			svg.icon(viewBox="0 0 32 32")
-				use(xlink:href="#icon-envelope")
+			h2#book-heading.slide-in-right-1 My Book
+				.subheading Due for release early 2015
 
-	svg.section-end(xmlns="http://www.w3.org/2000/svg", version="1.1", width="100%", height="100", viewBox="0 0 100 100", preserveAspectRatio="none")
+			.slide-in-right-2
+				p Building great websites and web apps is hard. It's not because the technology is too complex or that it's moving too fast, or that there is a shortage of good designers, developers, project managers, or other roles. Indeed the major challenges are in trying to get these roles to work together in harmony. Despite the fast pace of the web industry, many organisations struggle to adapt their production processes in a way that can harness all the skills and knowledge required to make a great website or app in an effective way.
+				p My book covers the workflow processes and roles required to produce such a project, where they overlap, and how they can be optimised to be conducive to the best possible product.
+				p It's due for release in Q1 2015 and will be published as an e-book on Amazon. If you'd like to be notified when it's released, please subscribe for updates below.
+
+			button.button.js-subscribe-button.slide-in-right-3 subscribe for updates
+				svg.icon(viewBox="0 0 32 32")
+					use(xlink:href="#icon-envelope")
+
+	svg.section-end(xmlns="http://www.w3.org/2000/svg", version="1.1", width="100%", height="100", viewBox="0 0 100 100", preserveAspectRatio="none", role="separator")
 		path(d="M100,100V0C80.029,100,50.075,100,0.149,0H0v100H100z")

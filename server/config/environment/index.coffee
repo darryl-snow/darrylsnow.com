@@ -14,7 +14,7 @@ all =
 	# Root path of server
 	root: path.normalize __dirname + "/../../.."
 	# Server port
-	port: process.env.PORT || 9000
+	port: process.env.PORT || 8000
 	# Should we populate the DB with sample data?
 	seedDB: true
 	# Secret for session, you will want to change this and make it an environment variable
@@ -27,7 +27,7 @@ all =
 		options:
 			db:
 				safe: true
-	tumblr:
+	blog:
 		clientID:     process.env.TUMBLR_ID || "id",
 		clientSecret: process.env.TUMBLR_SECRET || "secret",
 		callbackURL:  "http://localhost:9000/auth/tumblr/callback"

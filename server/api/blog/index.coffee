@@ -1,7 +1,7 @@
 "use strict"
 
 express = require "express"
-controller = require "./skills.controller"
+controller = require "./blog.controller"
 
 router = express.Router()
 
