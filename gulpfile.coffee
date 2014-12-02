@@ -111,6 +111,9 @@ gulp.task "copy-files", ->
 	gulp.src Config.src + "fonts/*"
 	.pipe gulp.dest Config.build + "styles"
 
+	gulp.src Config.src + "CNAME"
+	.pipe gulp.dest Config.build
+
 # Watch for changes to files
 
 gulp.task "watch", ->
