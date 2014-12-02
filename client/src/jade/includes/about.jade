@@ -1,0 +1,51 @@
+section#about.section--red(role="region", aria-labelledby="about-heading", itemscope, itemtype="http://data-vocabulary.org/Person")
+
+	.media.slide-in
+		.media-image
+			.avatar.slide-in-left-2
+				.avatar-info
+					a.link.js-modal-trigger(href="", style="color:#fff", data-modal="aboutme", aria-describedby="modal-aboutme") more?
+				img.avatar-image(src="images/darryl-snow.png", alt="Darryl Snow", itemprop="photo")
+		.media-content
+			h1#about-heading.slide-in-left-1(itemprop="name") Darryl Snow
+				.subheading(itemprop="title") Professional web designer, developer, &amp; project manager
+					.subheading(itemprop="address", itemscope, itemtype="http://data-vocabulary.org/Address") based in 
+						span(itemprop="locality") Kunming
+						meta(itemprop="region", content="Yunnan")
+						|, 
+						span(itemprop="country") China
+
+			meta(itemprop="url", content="http://yourweb.expert")
+
+			ul.icon-list.icon-list--red.slide-in-right-2
+				li
+					a.js-modal-trigger(href="#", title="Add me on Wechat / 微信", data-modal="wechat", aria-describedby="modal-wechat")
+						svg.icon(viewBox="0 0 32 32")
+							use(xlink:href="#icon-wechat")
+				li
+					a(href="callto://+darryl.snow", title="Skype me")
+						svg.icon(viewBox="0 0 32 32")
+							use(xlink:href="#icon-skype")
+				li
+					a(href="https://github.com/darryl-snow?tab=repositories", title="Browse my Github repositories")
+						svg.icon(viewBox="0 0 32 32")
+							use(xlink:href="#icon-github")
+				li
+					a(href="https://www.linkedin.com/profile/view?id=173295028", title="Browse my Linkedin profile")
+						svg.icon(viewBox="0 0 32 32")
+							use(xlink:href="#icon-linkedin")
+				li
+					a(href="tel:+8618612009701", title="Phone me")
+						svg.icon(viewBox="0 0 32 32")
+							use(xlink:href="#icon-phone")
+				li
+					a(href="mailto:darryl@yourweb.expert", title="Email me")
+						svg.icon(viewBox="0 0 32 32")
+							use(xlink:href="#icon-envelope")
+				li
+					a(href="http://weibo.com/dazsnow", title="Follow me on Weibo")
+						svg.icon(viewBox="0 0 32 32")
+							use(xlink:href="#icon-weibo")
+
+	svg.section-end(xmlns="http://www.w3.org/2000/svg", version="1.1", width="100%", height="100", viewBox="0 0 100 100", preserveAspectRatio="none", role="separator")
+		path(d="M100,100V0C80.029,100,50.075,100,0.149,0H0v100H100z")

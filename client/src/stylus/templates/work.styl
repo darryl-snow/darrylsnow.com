@@ -1,0 +1,43 @@
+.work-left,
+.work-right
+	group()
+	@extends					.left
+
+.work-left
+	width						100%
+
+	@media (min-width: 60em)
+		margin-right			3%
+		width					25%
+
+.work-right
+	width						100%
+
+	@media (min-width: 60em)
+		width					72%
+
+.services
+	unstyled-list()
+	margin-bottom				1em
+
+	@media (max-width: 59em)
+		inline-list()
+
+	li
+		margin					0.2em 0.5em
+		position				relative
+		
+		&:after
+			background			$white
+			border-radius		50%
+			content				""
+			height				6px
+			left				-1em
+			margin-top			-3px
+			position			absolute
+			top					50%
+			width				6px
+
+	a
+		border-bottom 			none
+		color					rgba($white, 0.7)

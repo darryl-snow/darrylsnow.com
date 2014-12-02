@@ -1,0 +1,46 @@
+section#blog.section--black(role="region", aria-labelledby="blog-heading")
+	
+	.blog.slide-in
+
+		.blog-left
+
+			.blog-post
+
+				h2#blog-heading.slide-in-left-1.js-blog-post-title
+					span
+					.subheading.js-blog-post-date
+
+				.slide-in-left-2.js-blog-post-body
+
+			.align--centre
+
+				a.button.slide-in-left-3.js-blog-post-url(href="http://darryl-snow.tumblr.com/post/92167288432/setting-the-tone", alt="Visit my blog") Read More
+					svg.icon(viewBox="0 0 32 32")
+						use(xlink:href="#icon-arrow-right")
+
+		.blog-right.slide-in-right-4
+			
+			.component(role="complimentary")
+				.component-content
+					.weather
+						.weather-forecast
+							.weather-icon
+								svg.icon(viewbox="0 0 32 32")
+									use(xlink:href="#icon-sun")
+							.weather-info
+								.weather-info-temperature
+									span
+									sup &deg;c
+								.weather-info-temperature-range
+									| H:
+									span.weather-info-temperature-max
+									sup &deg;
+									|  L:
+									span.weather-info-temperature-min
+									sup &deg;
+						.weather-local-conditions
+							.weather-location
+								svg.icon(viewBox="0 0 32 32")
+									use(xlink:href="#icon-map-marker")
+								| Kunming, China
+							.weather-time 00:00
