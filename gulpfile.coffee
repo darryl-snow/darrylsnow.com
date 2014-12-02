@@ -24,7 +24,7 @@ Config =
 # Reset
 
 gulp.task "reset", ->
-	return gulp.src Config.build + "/*", read: false
+	return gulp.src Config.build + "/*!{.git}", read: false
 		.pipe plugins.clean
 			force: true
 
@@ -112,6 +112,9 @@ gulp.task "copy-files", ->
 	.pipe gulp.dest Config.build + "styles"
 
 	gulp.src Config.src + "CNAME"
+	.pipe gulp.dest Config.build
+
+	gulp.src Config.src + ".gitignore"
 	.pipe gulp.dest Config.build
 
 # Watch for changes to files
