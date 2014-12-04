@@ -1,27 +1,33 @@
+morph = require "./morph-buttons.coffee"
+
 class Menu
 
 	constructor: ->
 
 		@el =
-			toggleButton: (document.getElementsByClassName "menu-toggle")[0]
-			perspective: (document.getElementsByClassName "perspective")[0]
-			cover: (document.querySelectorAll ".cover")[0]
-			menuItems: (document.querySelectorAll ".menu a")
+			toggleButton: document.getElementsByClassName("menu-toggle")[0]
+			perspective: document.getElementsByClassName("perspective")[0]
+			cover: document.querySelectorAll(".cover")[0]
+			menuItems: document.querySelectorAll(".menu a")
 
 		@menuOpen = false
 
-		@addEventListeners()
+		if @el.toggleButton
+			@addEventListeners()
 
 	addEventListeners: ->
 
 		@el.toggleButton.addEventListener "click", (e) =>
+			_gaq.push ["_trackEvent", "Menu", "Toggle", @menuOpen]
 			@toggleMenu()
 
 		@el.cover.addEventListener "click", (e) =>
+			_gaq.push ["_trackEvent", "Menu", "Overlay", @menuOpen]
 			@closeMenu()
 
 		for item in @el.menuItems
 			item.addEventListener "click", (e) =>
+				_gaq.push ["_trackEvent", "Menu", "Click", item]
 				@closeMenu()
 	
 	toggleMenu: ->
@@ -35,6 +41,8 @@ class Menu
 		@el.toggleButton.classList.add "open"
 		@el.perspective.classList.add "open"
 		@menuOpen = true
+
+		morph.closeAll()
 
 	closeMenu: ->
 		@el.toggleButton.classList.remove "open"

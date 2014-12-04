@@ -9,9 +9,6 @@ UserSchema = new Schema
 	email:
 		type: String
 		lowercase: true
-	role:
-		type: String
-		default: "user"
 	hashedPassword: String
 	provider: String
 	salt: String
@@ -32,14 +29,12 @@ UserSchema
 	.virtual "profile"
 	.get ->
 		"name": this.name
-		"role": this.role
 
 # Non-sensitive info we"ll be putting in the token
 UserSchema
 	.virtual "token"
 	.get ->
 		"_id": this._id
-		"role": this.role
 
 # Validations
 

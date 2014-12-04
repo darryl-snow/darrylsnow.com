@@ -6,10 +6,13 @@ class Blog
 	constructor: ->
 
 		@el =
-			title: (document.querySelectorAll ".js-blog-post-title span")[0]
-			date: (document.getElementsByClassName "js-blog-post-date")[0]
-			body: (document.getElementsByClassName "js-blog-post-body")[0]
-			url: (document.getElementsByClassName "js-blog-post-url")[0]
+			title: document.getElementsByClassName("js-blog-post-title")[0]
+			date: document.getElementsByClassName("js-blog-post-date")[0]
+			body: document.getElementsByClassName("js-blog-post-body")[0]
+			url: document.getElementsByClassName("js-blog-post-url")[0]
+			button: document.getElementsByClassName("js-blog-post-button")[0]
+			loading: document.querySelectorAll(".blog-left .loading")[0]
+			spinner: document.querySelectorAll(".blog-left .loading-spinner")[0]
 
 		@post =
 			title: 0
@@ -33,6 +36,7 @@ class Blog
 					url: blog.url
 
 				@updateUI()
+				@hideLoader()
 
 	updateUI: ->
 
@@ -57,10 +61,16 @@ class Blog
 
 		@el.title.innerText = @post.title
 		@el.date.innerText = day + " " + month + ", " + year
+		@el.date.setAttribute "content", date
 		@el.body.innerHTML = @post.body
-		@el.url.setAttribute "href"
-		@post.url
+		@el.button.setAttribute "href", @post.url
+		@post.url.setAttribute "content", @post.url
 
+	hideLoader: ->
 
+		@el.loading.classList.add "loaded"
+		setTimeout =>
+			@el.spinner.remove()
+		, 400
 
 module.exports = new Blog

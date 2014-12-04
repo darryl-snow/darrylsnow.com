@@ -81,13 +81,6 @@
 	&--centred
 		display			block
 		margin			1em auto
-		
-	&-login
-		opacity			0.7
-		position		absolute
-		right			0.8em
-		top				0.8em
-		z-index			getZIndex("loginButton")
-
-		+ActiveFocusHover()
-			opacity		1
+			
+	&-modal-close
+		z-index			getZIndex("modalCloseButton")

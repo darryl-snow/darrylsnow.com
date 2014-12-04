@@ -18,6 +18,7 @@ class Modal
 
 			trigger.addEventListener "click", (e) =>
 				e.preventDefault()
+				_gaq.push ["_trackEvent", "Modal Trigger", "Click", trigger]
 				modal = document.getElementById "modal-" + e.target.dataset.modal
 				@openModal(modal)
 
@@ -27,6 +28,7 @@ class Modal
 
 			button.addEventListener "click", (e) =>
 				e.preventDefault()
+				_gaq.push ["_trackEvent", "Modal Close", "Click", button]
 				modal = document.getElementById "modal-" + e.target.dataset.modal
 				@closeModal(modal)
 
@@ -35,6 +37,7 @@ class Modal
 		for overlay in el.modalOverlays
 
 			overlay.addEventListener "click", (e) =>
+				_gaq.push ["_trackEvent", "Modal Overlay", "Click", overlay]
 				@closeAllModals()
 
 	addKeyListener: ->

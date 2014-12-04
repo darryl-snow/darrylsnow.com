@@ -4,12 +4,14 @@ section#about.section--red(role="region", aria-labelledby="about-heading", items
 		.media-image
 			.avatar.slide-in-left-2
 				.avatar-info
-					a.link.js-modal-trigger(href="", style="color:#fff", data-modal="aboutme", aria-describedby="modal-aboutme") more?
+					a.link.js-modal-trigger(href="", style="color:#fff", data-modal="aboutme", aria-describedby="modal-aboutme", onclick="_gaq.push ['_trackEvent', 'About', 'More']") more?
 				img.avatar-image(src="images/darryl-snow.png", alt="Darryl Snow", itemprop="photo")
 		.media-content
-			h1#about-heading.slide-in-left-1(itemprop="name") Darryl Snow
-				.subheading(itemprop="title") Professional web designer, developer, &amp; project manager
-					.subheading(itemprop="address", itemscope, itemtype="http://data-vocabulary.org/Address") based in 
+			h1#about-heading.slide-in-left-1
+				span(itemprop="name") Darryl Snow
+				span.subheading
+					span(itemprop="title") Professional web designer, developer, &amp; project manager
+					span.subheading(itemprop="address", itemscope, itemtype="http://data-vocabulary.org/Address") based in 
 						span(itemprop="locality") Kunming
 						meta(itemprop="region", content="Yunnan")
 						|, 
@@ -19,31 +21,38 @@ section#about.section--red(role="region", aria-labelledby="about-heading", items
 
 			ul.icon-list.icon-list--red.slide-in-right-2
 				li
-					a.js-modal-trigger(href="#", title="Add me on Wechat / 微信", data-modal="wechat", aria-describedby="modal-wechat")
+					a.js-modal-trigger(href="javascript:void(0);", title="Add me on Wechat / 微信", data-modal="wechat", aria-describedby="modal-wechat", onclick="_gaq.push ['_trackEvent', 'Contact', 'Wechat']")
+						span Add me on Wechat / 微信
 						svg.icon(viewBox="0 0 32 32")
 							use(xlink:href="#icon-wechat")
 				li
-					a(href="callto://+darryl.snow", title="Skype me")
+					a(href="callto://+darryl.snow", title="Skype me", onclick="_gaq.push ['_trackEvent', 'Contact', 'Skype']")
+						span Skype me
 						svg.icon(viewBox="0 0 32 32")
 							use(xlink:href="#icon-skype")
 				li
-					a(href="https://github.com/darryl-snow?tab=repositories", title="Browse my Github repositories")
+					a(href="https://github.com/darryl-snow?tab=repositories", title="Browse my Github repositories", onclick="_gaq.push ['_trackEvent', 'Contact', 'Github']")
+						span Browse my Github repositories
 						svg.icon(viewBox="0 0 32 32")
 							use(xlink:href="#icon-github")
 				li
-					a(href="https://www.linkedin.com/profile/view?id=173295028", title="Browse my Linkedin profile")
+					a(href="https://www.linkedin.com/profile/view?id=173295028", title="Browse my Linkedin profile", onclick="_gaq.push ['_trackEvent', 'Contact', 'Linkedin']")
+						span Browse my Linkedin profile
 						svg.icon(viewBox="0 0 32 32")
 							use(xlink:href="#icon-linkedin")
 				li
-					a(href="tel:+8618612009701", title="Phone me")
+					a(href="tel:+8618612009701", title="Phone me", onclick="_gaq.push ['_trackEvent', 'Contact', 'Phone']")
+						span Phone me
 						svg.icon(viewBox="0 0 32 32")
 							use(xlink:href="#icon-phone")
 				li
-					a(href="mailto:darryl@yourweb.expert", title="Email me")
+					a(href="mailto:darryl@yourweb.expert", title="Email me", onclick="_gaq.push ['_trackEvent', 'Contact', 'Email']")
+						span Email me
 						svg.icon(viewBox="0 0 32 32")
 							use(xlink:href="#icon-envelope")
 				li
-					a(href="http://weibo.com/dazsnow", title="Follow me on Weibo")
+					a(href="http://weibo.com/dazsnow", title="Follow me on Weibo", onclick="_gaq.push ['_trackEvent', 'Contact', 'Weibo']")
+						span Follow me on Weibo
 						svg.icon(viewBox="0 0 32 32")
 							use(xlink:href="#icon-weibo")
 

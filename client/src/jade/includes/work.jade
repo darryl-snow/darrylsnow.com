@@ -3,10 +3,10 @@ section#work.section--cobalt(role="region", aria-labelledby="work-heading", item
 	.slide-in
 
 		h2#work-heading.slide-in-left-1 What I do
-			.subheading and have been doing for over 15 years
+			span.subheading and have been doing for over 15 years
 
-		meta(itemprop="name", content="Darryl Snow")
-		meta(itemprop="description", content="Professional design, development, and project management for websites & web apps")
+		meta(itemprop="name", content="Web Design, Development, & Project Management")
+		meta(itemprop="description", content="Darryl Snow is a web professional with over 15 years of experience - http://yourweb.expert")
 		meta(itemprop="category", content="Software")
 
 		.work-left.slide-in-left-2
@@ -90,9 +90,16 @@ section#work.section--cobalt(role="region", aria-labelledby="work-heading", item
 			.component(role="note")
 				.component-content
 					.availability
-						h3 Today I am:
-						.availability-activity working on Diageo Horizon
-						a.link(href="mailto:darryl@yourweb.expert", title="Email me") Ask about my availability
+						.loading
+							ul.loading-spinner
+								li
+								li
+								li
+								li
+							.loading-content
+								h3 Today I am:
+								.availability-activity working on Diageo Horizon
+								a.link(href="mailto:darryl@yourweb.expert", title="Email me") Ask about my availability
 
 			.component(role="note", itemprop="offers", itemscope itemtype="http://schema.org/Offer")
 				.component-content
@@ -100,25 +107,34 @@ section#work.section--cobalt(role="region", aria-labelledby="work-heading", item
 						h3 My Weekly Rate
 						.rates-number
 							small.rates-number-currency(itemprop="priceCurrency", content="$") usd
-							span.rates-number-rate(itemprop="price", content="600.00") $2000
+							span.rates-number-rate(itemprop="price", content="2400.00") $2,400
+							meta(itemprop="PriceSpecification", content="weekly rate")
+							meta(itemprop="category", content="Software")
 						.rates-conversions
-							ul.icon-list.icon-list--cobalt
-								li
-									a.js-convert-currency.active(data-currency="USD", title="Convert rate to USD")
-										svg.icon(viewBox="0 0 32 32")
-											use(xlink:href="#icon-dollar")
-								li
-									a.js-convert-currency(data-currency="EUR", title="Convert rate to EUR")
-										svg.icon(viewBox="0 0 32 32")
-											use(xlink:href="#icon-euro")
-								li
-									a.js-convert-currency(data-currency="GBP", title="Convert rate to GBP")
-										svg.icon(viewBox="0 0 32 32")
-											use(xlink:href="#icon-gbp")
-								li
-									a.js-convert-currency(data-currency="CNY", title="Convert rate to CNY")
-										svg.icon(viewBox="0 0 32 32")
-											use(xlink:href="#icon-cny")
+							.loading
+								ul.loading-spinner
+									li
+									li
+									li
+									li
+								.loading-content
+									ul.icon-list.icon-list--cobalt
+										li
+											a.js-convert-currency.active(data-currency="USD", title="Convert rate to USD")
+												svg.icon(viewBox="0 0 32 32")
+													use(xlink:href="#icon-dollar")
+										li
+											a.js-convert-currency(data-currency="EUR", title="Convert rate to EUR")
+												svg.icon(viewBox="0 0 32 32")
+													use(xlink:href="#icon-euro")
+										li
+											a.js-convert-currency(data-currency="GBP", title="Convert rate to GBP")
+												svg.icon(viewBox="0 0 32 32")
+													use(xlink:href="#icon-gbp")
+										li
+											a.js-convert-currency(data-currency="CNY", title="Convert rate to CNY")
+												svg.icon(viewBox="0 0 32 32")
+													use(xlink:href="#icon-cny")
 						a.link(href="mailto:darryl@yourweb.expert", title="Email me") Ask about my rates
 
 			.component(role="note")

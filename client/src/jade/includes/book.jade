@@ -1,11 +1,10 @@
-section#book.section--blue(role="region", aria-labelledby="e-book-heading", itemscope, itemtype="http://schema.org/Book")
+section#book.section--blue(role="region", aria-labelledby="book-heading", itemscope, itemtype="http://schema.org/Book")
 	.slide-in
 
 		.left.half.slide-in-left-1
 
 			meta(itemprop="name", content="For a Better Web")
 			meta(itemprop="description", content="The Ultimate Guide to Web Project Management")
-			meta(itemprop="category", content="Media > Books > Non-Fiction")
 			meta(itemprop="author", content="Darryl Snow")
 			meta(itemprop="inLanguage", content="English")
 			meta(itemprop="bookFormat", content="Ebook")
@@ -15,16 +14,39 @@ section#book.section--blue(role="region", aria-labelledby="e-book-heading", item
 		article.right.half
 
 			h2#book-heading.slide-in-right-1 My Book
-				.subheading Due for release early 2015
+				span.subheading Due for release early 2015
 
 			.slide-in-right-2
 				p Building great websites and web apps is hard. It's not because the technology is too complex or that it's moving too fast, or that there is a shortage of good designers, developers, project managers, or other roles. Indeed the major challenges are in trying to get these roles to work together in harmony. Despite the fast pace of the web industry, many organisations struggle to adapt their production processes in a way that can harness all the skills and knowledge required to make a great website or app in an effective way.
 				p My book covers the workflow processes and roles required to produce such a project, where they overlap, and how they can be optimised to be conducive to the best possible product.
 				p It's due for release in Q1 2015 and will be published as an e-book on Amazon. If you'd like to be notified when it's released, please subscribe for updates below.
 
-			button.button.js-subscribe-button.slide-in-right-3 subscribe for updates
-				svg.icon(viewBox="0 0 32 32")
-					use(xlink:href="#icon-envelope")
+			.slide-in-right-3
+				.morph-button.morph-button-subscribe
+					button.button.morph-button-open(type="button", data-morph="subscribe", onclick="_gaq.push ['_trackEvent', 'Subscribe', 'Open']") Subscribe for updates
+						svg.icon(viewbox="0 0 32 32")
+							use(xlink:href="#icon-envelope")
+					.morph-button-content
+						div
+							.loading.loaded
+								ul.loading-spinner.loading-spinner-form.loading-spinner-subscribe
+									li
+									li
+									li
+									li
+								.loading-content
+									.morph-button-form
+										span.morph-button-close(data-morph="subscribe")
+											svg.icon(viewBox="0 0 32 32")
+												use(xlink:href="#icon-times")
+										h2 Subscribe
+											span.subheading for updates about my book
+										form
+											p
+												label(for="subscription") Email
+												input#subscription.js-subscribe-email(type="email", name="subscription")
+											p
+												button.js-subscribe Subscribe
 
 	svg.section-end(xmlns="http://www.w3.org/2000/svg", version="1.1", width="100%", height="100", viewBox="0 0 100 100", preserveAspectRatio="none", role="separator")
 		path(d="M100,100V0C80.029,100,50.075,100,0.149,0H0v100H100z")

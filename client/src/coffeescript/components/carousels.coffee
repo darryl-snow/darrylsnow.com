@@ -40,7 +40,8 @@ class Carousel
 		pagination = "<ul class='pagination' data-carousel=" +
 		 @carousel.getAttribute("id") + ">"
 		for item, index in @carouselItems
-			pagination += "<li class='pagination-item'><a href='#'>" +
+			pagination += "<li class='pagination-item'><a href='javascript:void(0);'" +
+				" title='See another fun fact'>" +
 				"Fun Fact #{index}</a></li>"
 		pagination += "</ul>"
 		@carousel.insertAdjacentHTML "beforeBegin", pagination
@@ -51,6 +52,7 @@ class Carousel
 
 		addEvent = (item, index) =>
 			item.childNodes[0].addEventListener "click", (e) =>
+				_gaq.push ["_trackEvent", "Carousel", "Click", @carousel, index]
 				e.preventDefault()
 				@currentItem = index
 				@goto(@currentItem)

@@ -4,6 +4,7 @@ class Slidein
 		@el =
 			doc: window.document.documentElement
 			slideSections: document.getElementsByClassName "slide-in"
+			perspective: document.getElementsByClassName("perspective")[0]
 
 		@viewPortFactor = 0.2
 
@@ -12,7 +13,7 @@ class Slidein
 			@didScroll = true
 
 		setInterval =>
-			if @didScroll
+			if @didScroll and !@menuIsOpen()
 				@updateSections()
 				@didScroll = false
 		, 100
@@ -22,16 +23,20 @@ class Slidein
 			@hasResized = true
 
 		setInterval =>
-			if @hasResized
+			if @hasResized and !@menuIsOpen()
 				@updateSections()
 				@hasResized = false
 		, 100
 
-		@updateSections()
+		if !@menuIsOpen()
+			@updateSections()
 
 	updateSections: ->
 		for section in @el.slideSections
 			@checkIfVisible(section, @viewPortFactor)
+
+	menuIsOpen: ->
+		@el.perspective.classList.contains "open"
 
 	checkIfVisible: (section, factor) ->
 		sectionHeight = section.offsetHeight

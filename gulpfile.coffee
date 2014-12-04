@@ -1,15 +1,16 @@
 # Dependencies
 
-gulp	= require "gulp"
-plugins	= require("gulp-load-plugins")(lazy: false)
-run		= require "run-sequence"
+gulp		= require "gulp"
+plugins		= require("gulp-load-plugins")(lazy: false)
+run			= require "run-sequence"
+critical 	= require "critical"
 
-express	= require "express"
-open 	= require "open"
-path	= require "path"
-lr		= require("tiny-lr")()
+express		= require "express"
+open 		= require "open"
+path		= require "path"
+lr			= require("tiny-lr")()
 
-pkg		= require "./package.json"
+pkg			= require "./package.json"
 
 # Configuration
 
@@ -54,6 +55,7 @@ gulp.task "coffeescript", ->
 # Compile Stylus
 
 gulp.task "stylus", ->
+
 	gulp.src Config.src + "stylus/main.styl"
 	.pipe plugins.plumber()
 	.pipe plugins.stylus()
@@ -64,6 +66,29 @@ gulp.task "stylus", ->
 	.pipe plugins.size
 		showFiles: true
 	.pipe gulp.dest Config.build + "styles"
+
+# Inline the "above the fold" CSS
+
+gulp.task "critical", ->
+
+	critical.generate
+		base: Config.build
+		src: "index.html"
+		dest: Config.build + "styles/main.css"
+		width: 320
+		height: 480
+		minify: true
+		extract: true
+	, (err, output) ->
+		critical.inline
+			base: Config.build
+			src: "index.html"
+			dest: "index.html"
+			minify: true
+
+		gulp.src Config.build + "/*.css", read: false
+		.pipe plugins.clean
+			force: true
 
 # Compile Jade
 
@@ -102,10 +127,10 @@ gulp.task "copy-files", ->
 	gulp.src Config.src + "lib/**/*"
 	.pipe gulp.dest Config.build + "lib"
 
-	gulp.src Config.src + "images/favicons/favicion.ico"
+	gulp.src Config.src + "images/favicion.ico"
 	.pipe gulp.dest Config.build
 
-	gulp.src Config.src + "images/favicons/browserconfig.xml"
+	gulp.src Config.src + "images/browserconfig.xml"
 	.pipe gulp.dest Config.build
 
 	gulp.src Config.src + "fonts/*"
@@ -115,6 +140,12 @@ gulp.task "copy-files", ->
 	.pipe gulp.dest Config.build
 
 	gulp.src Config.src + ".gitignore"
+	.pipe gulp.dest Config.build
+
+	gulp.src Config.src + "*.txt"
+	.pipe gulp.dest Config.build
+
+	gulp.src Config.src + "sitemap.xml"
 	.pipe gulp.dest Config.build
 
 # Watch for changes to files
@@ -141,7 +172,7 @@ gulp.task "server", ->
 	app.use require("connect-livereload")()
 	app.use express.static Config.build
 	app.listen Config.port
-	lr.listen 35728
+	lr.listen 35729
 	setTimeout ->
 		open "http://localhost:" + Config.port
 	, 3000
@@ -158,7 +189,7 @@ notifyLivereload = (event) ->
 
 gulp.task "default", ->
 	Config.publish = false
-	run ["coffeescript", "stylus", "jade", "images", "copy-files"], "watch", "server"
+	run ["coffeescript", "stylus", "jade", "images", "copy-files"], "critical", "watch", "server"
 
 gulp.task "deploy", ->
 	Config.publish = true
@@ -167,3 +198,4 @@ gulp.task "deploy", ->
 	run "jade"
 	run "images"
 	run "copy-files"
+	run "critical"

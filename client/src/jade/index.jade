@@ -1,7 +1,7 @@
 extends templates/master
 
 block title
-	| Darryl Snow &ndash; Web designer, developer, and project manager based in Kunming, China
+	| Darryl Snow &ndash; Web designer, developer, and project manager
 
 block styles
 
@@ -14,232 +14,33 @@ block content
 			path.menu-toggle-bottom(d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190", transform="translate(480, 320) scale(1, -1) translate(-480, -318) ")
 		span.menu-toggle-text Menu
 
-	button.button.button-extrasmall.button-login Login
-		svg.icon(viewBox="0 0 32 32")
-			use(xlink:href="#icon-lock")
-
-	//- style.
-	//- 	.morph-button {
-	//- 		width: 300px;
-	//- 		height: 80px;
-	//- 		display: inline-block;
-	//- 		margin: 10px 15px;
-	//- 		position: relative;
-	//- 		text-align: center;
-	//- 	}
-	//- 	.morph-button:before {
-	//- 		position: fixed;
-	//- 		top: 0;
-	//- 		left: 0;
-	//- 		z-index: 800;
-	//- 		width: 100%;
-	//- 		height: 100%;
-	//- 		background: rgba(0,0,0,0.5);
-	//- 		content: '';
-	//- 		opacity: 0;
-	//- 		transition: opacity 0.5s;
-	//- 		pointer-events: none;
-	//- 	}
-	//- 	.morph-button > button {
-	//- 		background-color: #fef0e3;
-	//- 		border-radius: 3em;
-	//- 		color: #e75854;
-	//- 		z-index: 1000;
-	//- 		width: 100%;
-	//- 		height: 100%;
-	//- 		transition: opacity 0.1s 0.5s;
-	//- 		position: relative;
-	//- 		padding: 0 1em;
-	//- 		border: none;
-	//- 		background-color: #e85657;
-	//- 		color: #f9f6e5;
-	//- 		text-transform: uppercase;
-	//- 		letter-spacing: 1px;
-	//- 		font-weight: 700;
-	//- 		line-height: 80px;
-	//- 		overflow: hidden;
-	//- 		text-decoration:none;
-	//- 		outline:none;
-	//- 	}
-	//- 	.morph-content {
-	//- 		transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	//- 		background-color: #fef0e3;
-	//- 		color: #e75854;
-	//- 		overflow: hidden;
-	//- 		transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s, border-radius 0.4s 0.1s;
-	//- 		position: fixed;
-	//- 		z-index: 900;
-	//- 		opacity: 0;
-	//- 		width: 300px;
-	//- 		height: 80px;
-	//- 		pointer-events: none;
-	//- 		text-align: center;
-	//- 		border-radius:3em;
-	//- 	}
-	//- 	.morph-button .morph-content > div {
-	//- 		visibility: hidden;
-	//- 		height: 0;
-	//- 		opacity: 0;
-	//- 		transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
-	//- 	}
-	//- 	.content-style-form {
-	//- 		position: relative;
-	//- 		text-align: left;
-	//- 	}
-	//- 	.icon-close {
-	//- 		opacity: 0;
-	//- 		transition: opacity 0.2s 0.35s, transform 0.2s 0.35s;
-	//- 		transform: scale(0.85);
-	//- 		top: 0;
-	//- 		right: 0;
-	//- 		color: #ebd3bd;
-	//- 		font-size: 75%;
-	//- 		position: absolute;
-	//- 		z-index: 100;
-	//- 		display: block;
-	//- 		overflow: hidden;
-	//- 		width: 3em;
-	//- 		height: 3em;
-	//- 		text-align: center;
-	//- 		line-height: 3;
-	//- 		cursor: pointer;
-	//- 	}
-	//- 	.morph-button .content-style-form h2 {
-	//- 		opacity: 0;
-	//- 		transition: opacity 0.2s 0.35s, transform 0.2s 0.35s;
-	//- 		transform: scale(0.85);
-	//- 		margin: 0;
-	//- 		padding: 0.4em 0 0.3em;
-	//- 		text-align: center;
-	//- 		font-weight: 300;
-	//- 		font-size: 3.5em;
-	//- 	}
-	//- 	.morph-button.open .content-style-form h2 {
-	//- 		opacity: 1;
-	//- 		transform: scale(1);
-	//- 	}
-	//- 	.content-style-form form {
-	//- 		padding: 10px 30px;
-	//- 	}
-	//- 	.morph-button .content-style-form p {
-	//- 		opacity: 0;
-	//- 		transition: opacity 0.2s 0.35s, transform 0.2s 0.35s;
-	//- 		transform: scale(0.85);
-	//- 		margin: 0 0 5px 0;
-	//- 		font-size: 0.7em;
-	//- 		line-height: 1.75;
-	//- 	}
-	//- 	.morph-button .content-style-form p:first-child {
-	//- 		transition-delay: 0.4s;
-	//- 	}
-	//- 	.morph-button .content-style-form p:nth-child(2) {
-	//- 		transition-delay: 0.45s;
-	//- 	}
-	//- 	.morph-button .content-style-form p:nth-child(3) {
-	//- 		transition-delay: 0.5s;
-	//- 	}
-	//- 	.morph-button.open .content-style-form p,
-	//- 	.morph-button.open .content-style-form .icon-close {
-	//- 		opacity: 1;
-	//- 		transform: scale(1);
-	//- 	}
-	//- 	.content-style-form label {
-	//- 		display: block;
-	//- 		padding: 10px 0 0;
-	//- 		color: #d5bba4;
-	//- 		text-transform: uppercase;
-	//- 		letter-spacing: 1px;
-	//- 		font-weight: bold;
-	//- 	}
-	//- 	.content-style-form input[type="text"],
-	//- 	.content-style-form input[type="password"] {
-	//- 		padding: 10px;
-	//- 		width: 100%;
-	//- 		border: 2px solid #ebd3bd;
-	//- 		background: transparent;
-	//- 		color: #b09a86;
-	//- 		font-weight: 300;
-	//- 		font-size: 2.2em;
-	//- 	}
-	//- 	.content-style-form button {
-	//- 		display: block;
-	//- 		margin-top: 2.5em;
-	//- 		padding: 1.5em;
-	//- 		width: 100%;
-	//- 		border: none;
-	//- 		background: #e75854;
-	//- 		color: #f9f6e5;
-	//- 		text-transform: uppercase;
-	//- 		letter-spacing: 1px;
-	//- 		font-weight: 800;
-	//- 		font-size: 1.25em;
-	//- 	}
-	//- 	.morph-button.open:before {
-	//- 		z-index: 1800;
-	//- 	}
-	//- 	.morph-button.open > button {
-	//- 		opacity: 0;
-	//- 		transition: opacity 0.1s;
-	//- 		z-index: 2000;
-	//- 	}
-	//- 	.morph-button.open > button {
-	//- 		pointer-events: none;
-	//- 	}
-	//- 	.morph-button .morph-content, 
-	//- 	.morph-button.open .morph-content {
-	//- 		transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	//- 	}
-	//- 	.morph-button.open .morph-content {
-	//- 		margin: -210px 0 0 -170px;
-	//- 		width: 340px;
-	//- 		height: 420px;
-	//- 		top: 50% !important;
-	//- 		left: 50% !important;
-	//- 		border-radius: 0;
-	//- 		transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s, border-radius 0.4s 0.1s;
-	//- 	}
-	//- 	.morph-button.open .morph-content {
-	//- 		opacity: 1;
-	//- 		pointer-events: auto;
-	//- 		z-index: 1900;
-	//- 	}
-	//- 	.morph-button.open .morph-content > div {
-	//- 		visibility: visible;
-	//- 		height: auto;
-	//- 		opacity: 1;
-	//- 	}
-
-	//- .morph-button
-	//- 	button.js-button-open(type="button") Login
-	//- 	.morph-content(style="left: 10px; top: 15px;")
-	//- 		div
-	//- 			.content-style-form
-	//- 				span.icon-close
-	//- 					svg.icon(viewBox="0 0 32 32")
-	//- 						use(xlink:href="#icon-times")
-	//- 				h2 Login
-	//- 				form
-	//- 					p
-	//- 						label Email
-	//- 						input(type="text")
-	//- 					p
-	//- 						label Password
-	//- 						input(type="password")
-	//- 					p
-	//- 						button Login
-
-	//- script.
-	//- 	open = document.getElementsByClassName("js-button-open")[0]
-	//- 	close = document.getElementsByClassName("icon-close")[0]
-	//- 	morph = document.getElementsByClassName("morph-button")[0]
-	//- 	open.addEventListener("click", function(e) {
-	//- 		e.preventDefault();
-	//- 		morph.classList.add("open");
-	//- 	});
-	//- 	close.addEventListener("click", function(e) {
-	//- 		e.preventDefault();
-	//- 		morph.classList.remove("open");
-	//- 	});
+	.morph-button.morph-button-login
+		button.button.button-extrasmall.morph-button-open(type="button", data-morph="login") Login
+			svg.icon(viewbox="0 0 32 32")
+				use(xlink:href="#icon-lock")
+		.morph-button-content
+			div
+				.loading.loaded
+					ul.loading-spinner.loading-spinner-form.loading-spinner-login
+						li
+						li
+						li
+						li
+					.loading-content
+						.morph-button-form
+							span.morph-button-close(data-morph="login")
+								svg.icon(viewBox="0 0 32 32")
+									use(xlink:href="#icon-times")
+							h2 Login
+							form
+								p
+									label(for="login") Email
+									input#login.js-login-email(type="email", name="login")
+								p
+									label(for="password") Password
+									input#password.js-login-password(type="password", name="password")
+								p
+									button.js-login Login
 
 	include includes/modals
 

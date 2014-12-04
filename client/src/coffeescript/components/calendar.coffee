@@ -46,8 +46,9 @@ class Calendar
 			year: nd.getFullYear()
 
 	updateUI: (date) ->
-		@el.day.innerText = date["day"]
-		@el.date.innerText = date["date"]
-		@el.monthandyear = date["month"] + ", " + date["year"]
+		if @el.day
+			@el.day.innerText = date["day"]
+			@el.date.innerText = date["date"]
+			@el.monthandyear.innerText = date["month"] + ", " + date["year"]
 
 module.exports = new Calendar

@@ -1,7 +1,7 @@
 .icon-list
 	inline-list()
 	unstyled-list()
-	
+
 	a
 		background			rgba($white,0.1)
 		border-radius		50%
@@ -15,7 +15,7 @@
 		text-align			center
 		transition			background 0.2s, color 0.2s
 		width				4em
-			
+
 		&:after
 			border-radius	50%
 			box-shadow		0 0 0 4px $white
@@ -30,20 +30,29 @@
 			transform		scale(.8)
 			transition		transform 0.2s, opacity 0.2s
 			width			100%
-			
+
 		+ActiveFocusHover()
 			background	$white
 			color		$red !important
-			
+
 			&:after
 				opacity		1
 				transform	scale(1)
-			
+
+		span
+			height			0
+			left			0
+			overflow		hidden
+			pointer-events	none
+			position		absolute
+			top				0
+			width			0
+
 	&--red
 		a
 			+ActiveFocusHover()
 				color		$red !important
-				
+
 	&--cobalt
 		a
 			+ActiveFocusHover()

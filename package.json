@@ -2,7 +2,7 @@
   "name": "darrylsnow",
   "version": "0.1.0",
   "main": "server/app.coffee",
-  "description": "Darryl Snow is a web designer, developer, and project manager with over 15 years' experience based in Kunming, China.",
+  "description": "Darryl Snow is a web designer, developer, and project manager with over 15 years of experience based in Kunming, China.",
   "keywords": "web website designer developer javascript project manager app webapp",
   "dependencies": {
     "body-parser": "^1.9.2",
@@ -32,6 +32,7 @@
     "coffee-script": "^1.8.0",
     "coffeeify": "^0.7.0",
     "connect-livereload": "^0.5.0",
+    "critical": "^0.5.0",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^1.0.1",
     "gulp-browserify": "^0.5.0",

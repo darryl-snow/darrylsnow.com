@@ -3,9 +3,11 @@ class Rates
 	constructor: ->
 
 		@el =
-			rate: (document.getElementsByClassName "rates-number-rate")[0]
-			currency: (document.getElementsByClassName "rates-number-currency")[0]
+			rate: document.getElementsByClassName("rates-number-rate")[0]
+			currency: document.getElementsByClassName("rates-number-currency")[0]
 			conversionButtons: document.getElementsByClassName "js-convert-currency"
+			loading: document.querySelectorAll(".rates-conversions .loading")[0]
+			spinner: document.querySelectorAll(".rates-conversions .loading-spinner")[0]
 
 		@defaultCurrency = "USD"
 
@@ -26,6 +28,7 @@ class Rates
 				@rates = JSON.parse response._body
 
 				@updateUI @defaultCurrency
+				@hideLoader()
 
 	updateUI: (currency) ->
 
@@ -45,12 +48,23 @@ class Rates
 		@el.rate.innerText = symbol + amount
 		@el.currency.innerText = currency
 
+		@el.rate.setAttribute "content", amount
+		@el.currency.setAttribute "content", symbol
+
 	addEventListeners: ->
 
 		for button in @el.conversionButtons
 
 			button.addEventListener "click", (e) =>
 				e.preventDefault()
+				_gaq.push ["_trackEvent", "Rare", "Click", e.target.dataset.currency]
 				@updateUI e.target.dataset.currency
+
+	hideLoader: ->
+
+		@el.loading.classList.add "loaded"
+		setTimeout =>
+			@el.spinner.remove()
+		, 400
 
 module.exports = new Rates

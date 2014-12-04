@@ -2,21 +2,32 @@ section#blog.section--black(role="region", aria-labelledby="blog-heading")
 	
 	.blog.slide-in
 
-		.blog-left
+		.blog-left(itemscope, itemtype="http://schema.org/Blog")
 
-			.blog-post
+			.loading
+				ul.loading-spinner
+					li
+					li
+					li
+					li
+				.loading-content
 
-				h2#blog-heading.slide-in-left-1.js-blog-post-title
-					span
-					.subheading.js-blog-post-date
+					.blog-post(itemscope, itemtype="http://schema.org/BlogPosting")
 
-				.slide-in-left-2.js-blog-post-body
+						meta(itemprop="author", content="Darryl Snow")
+						meta(itemprop="url", content="http://darryl-snow.tumblr.com/")
 
-			.align--centre
+						h2#blog-heading.slide-in-left-1
+							span.js-blog-post-title(itemprop="headline")
+							span.subheading.js-blog-post-date(itemprop="datePublished", content="Sat Jul 19 2014 03:17:00 GMT+0800 (CST)")
 
-				a.button.slide-in-left-3.js-blog-post-url(href="http://darryl-snow.tumblr.com/post/92167288432/setting-the-tone", alt="Visit my blog") Read More
-					svg.icon(viewBox="0 0 32 32")
-						use(xlink:href="#icon-arrow-right")
+						.slide-in-left-2.js-blog-post-body(itemprop="articleBody")
+
+					.align--centre
+
+						a.button.slide-in-left-3.js-blog-post-button(href="", title="Visit my blog", onclick="_gaq.push ['_trackEvent', 'External', 'Blog']") Continue reading
+							svg.icon(viewBox="0 0 32 32")
+								use(xlink:href="#icon-arrow-right")
 
 		.blog-right.slide-in-right-4
 			
@@ -24,20 +35,27 @@ section#blog.section--black(role="region", aria-labelledby="blog-heading")
 				.component-content
 					.weather
 						.weather-forecast
-							.weather-icon
-								svg.icon(viewbox="0 0 32 32")
-									use(xlink:href="#icon-sun")
-							.weather-info
-								.weather-info-temperature
-									span
-									sup &deg;c
-								.weather-info-temperature-range
-									| H:
-									span.weather-info-temperature-max
-									sup &deg;
-									|  L:
-									span.weather-info-temperature-min
-									sup &deg;
+							.loading
+								ul.loading-spinner
+									li
+									li
+									li
+									li
+								.loading-content
+									.weather-icon
+										svg.icon(viewbox="0 0 32 32")
+											use(xlink:href="#icon-sun")
+									.weather-info
+										.weather-info-temperature
+											span
+											sup &deg;c
+										.weather-info-temperature-range
+											| H:
+											span.weather-info-temperature-max
+											sup &deg;
+											|  L:
+											span.weather-info-temperature-min
+											sup &deg;
 						.weather-local-conditions
 							.weather-location
 								svg.icon(viewBox="0 0 32 32")

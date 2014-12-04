@@ -1,0 +1,230 @@
+.morph-button
+	display							inline-block
+	position						fixed
+	z-index							getZIndex("loginButton")
+
+	&:before
+		background					rgba($black,0.5)
+		content						""
+		height						100%
+		opacity						0
+		pointer-events				none
+		position					fixed
+		right						0
+		top							0
+		transition					opacity 0.5s
+		width						100%
+		z-index						getZIndex("morphOverlay")
+
+	&-open
+		transition					opacity 0.1s 0.5s
+
+	&-content
+		background-color			$cream
+		border-radius				3em
+		color						$orange
+		opacity						0
+		overflow					hidden
+		pointer-events				none
+		position					fixed
+		text-align					center
+		transition					opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, right 0.4s 0.1s, margin 0.4s 0.1s, border-radius 0.4s 0.1s
+		transition-timing-function	cubic-bezier(0.7,0,0.3,1)
+		z-index						getZIndex("morphContent")
+
+		> div
+			visibility				hidden
+			height					0
+			opacity					0
+			transition				opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s
+			
+		&.error
+			
+			.morph-button-form
+				
+				label
+					color			$red
+
+				input
+					border			2px solid $red
+					color			$red
+
+	&-form
+		position					relative
+		text-align					left
+
+		h2
+			font-size				3.5em
+			font-weight				300
+			margin					0
+			opacity					0
+			padding					0.4em 0 0.3em
+			text-align				center
+			transition				opacity 0.2s 0.35s, transform 0.2s 0.35s
+			transform				scale(0.85)
+
+		form
+			padding					10px 30px
+
+		p
+			font-size				0.7em
+			line-height				1.75
+			margin					0 0 5px 0
+			opacity					0
+			transform				scale(0.85)
+			transition				opacity 0.2s 0.35s, transform 0.2s 0.35s
+
+			&:first-child
+				transition-delay	0.4s
+
+			&:nth-child(2)
+				transition-delay	0.45s
+
+			&:nth-child(3)
+				transition-delay	0.5s
+
+		label
+			color					darken($brown, 20%)
+			display					block
+			font-weight				bold
+			letter-spacing			1px
+			padding					10px 0 0
+			text-transform			uppercase
+			
+		input
+			background				transparent
+			border					2px solid $brown
+			color					darken($brown, 20%)
+			font-size				2.2em
+			font-weight				300
+			padding					0.67em
+			transition				0.3s all ease-in-out
+			width					100%
+
+			&:focus
+				background			$white
+				border				2px solid darken($brown, 20%)
+
+		button
+			background				$brown
+			border					none
+			color					$white
+			display					block
+			font-size				1.25em
+			font-weight				800
+			letter-spacing			1px
+			margin-top				2.5em
+			padding					1.5em
+			width					100%
+			text-transform			uppercase
+			transition				0.3s all ease-in-out
+			
+			+ActiveFocusHover()
+				background			$orange
+
+	&-close
+		color						$brown
+		cursor						pointer
+		display						block
+		font-size					75%
+		height						3em
+		line-height					3
+		opacity						0
+		overflow					hidden
+		position					absolute
+		right						0
+		text-align					center
+		transform					scale(0.85)
+		transition					opacity 0.2s 0.35s, transform 0.2s 0.35s, color 0.3s ease-in-out
+		top							0
+		width						3em
+		z-index						100
+		
+		+ActiveFocusHover()
+			color					darken($brown, 30%)
+			
+	&.open
+		
+		&:before
+			opacity					1
+			pointer-events			auto
+			z-index					getZIndex("modalOverlay")
+
+		.morph-button-open
+			opacity					0
+			pointer-events			none
+			transition				opacity 0.1s
+			z-index					getZIndex("modalOverlay")
+			
+		.morph-button-content
+			border-radius			0
+			box-shadow				0 1px 10px rgba($black,0.2)
+			margin					0 -10.5em 0 0
+			opacity					1
+			pointer-events			auto
+			right					50% !important
+			top						10% !important
+			transition				width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, right 0.4s 0.1s, margin 0.4s 0.1s, border-radius 0.4s 0.1s
+			transition-timing-function	cubic-bezier(0.7,0,0.3,1)
+			z-index					getZIndex("modal")
+
+			& > div
+				height				auto
+				opacity				1
+				visibility			visible
+
+		.morph-button-form h2
+			opacity					1
+			transform				scale(1)
+
+		.morph-button-close,
+		.morph-button-form p
+			opacity					1
+			transform				scale(1)
+
+	&-login
+		height						2em
+		right						0.8em
+		top 						0.8em
+		width						7.5em
+
+		.morph-button-content
+			height					2em
+			right					0.8em
+			top						0.8em
+			width					7.5em
+			
+		&.open
+			.morph-button-content
+				height				26em
+				width				21em
+			
+	&-subscribe
+		height						4.75em
+		margin-top					1em
+		position 					relative	
+		width						24.375em
+
+		.morph-button-open
+			margin					0
+
+		.morph-button-content
+			height					4.75em
+			left					0
+			margin-top				-4.75em
+			position				relative
+			right					0
+			top						0
+			width					24.375em
+			
+		&.open
+			
+			&:before
+				opacity				0
+
+			.morph-button-content
+				height				23em
+				margin-top			-4.75em
+				right				0 !important
+				top					0 !important
+				width				100%

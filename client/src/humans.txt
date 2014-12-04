@@ -1,0 +1,24 @@
+/* TEAM */
+
+Designer: Darryl Snow
+Developer: Darryl Snow
+Project Manager: Darryl Snow
+Tester: Darryl Snow
+
+Site: darryl@yourweb.expert
+Twitter: dazsnow
+Location: Kunming, China
+
+
+/* THANKS */
+
+Codrops: http://tympanus.net/codrops
+CSS Tricks: http://css-tricks.com/
+
+
+/* SITE */
+
+Last update: 2014/12/03
+Standards: HTML5, CSS3
+Components: 
+Software: NPM, Gulp, Browserify, NodeJS, Karma, Jasmine, Travis

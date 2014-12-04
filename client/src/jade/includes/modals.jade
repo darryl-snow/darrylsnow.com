@@ -1,6 +1,7 @@
 .modal.modal--black#modal-wechat(aria-hidden="true", role="dialog", aria-labelledby="modal-wechat-header", tabindex="-1")
 	.modal-content
-		h2#wechat-modal-header Scan this QR code to add me on Wechat / 微信
+		h2#modal-wechat-header Scan this QR code to add me on Wechat / 微信
+		h3 xuedalong
 		img.image-block(src="images/wechat-qr-code.jpg", alt="My Wechat QR code")
 		button.button.button-small.js-modal-close(data-modal="wechat") close
 			svg.icon(viewBox="0 0 32 32")
@@ -8,7 +9,7 @@
 
 .modal.modal--green#modal-aboutme(aria-hidden="true", role="dialog", aria-labelledby="modal-aboutme-header", tabindex="-1")
 
-	button.button.button-icon.js-modal-close(data-modal="aboutme")
+	button.button.button-icon.button-modal-close.js-modal-close(data-modal="aboutme")
 		svg.icon(viewBox="0 0 32 32")
 			use(xlink:href="#icon-times")
 

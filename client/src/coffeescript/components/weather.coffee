@@ -5,11 +5,13 @@ class Weather
 
 	constructor: ->
 		@el =
-			time: (document.getElementsByClassName "weather-time")[0]
-			currentTemp: (document.querySelectorAll ".weather-info-temperature span")[0]
-			maxTemp: (document.getElementsByClassName "weather-info-temperature-max")[0]
-			minTemp: (document.getElementsByClassName "weather-info-temperature-min")[0]
-			icon: (document.querySelectorAll ".weather-icon use")[0]
+			time: document.getElementsByClassName("weather-time")[0]
+			currentTemp: document.querySelectorAll(".weather-info-temperature span")[0]
+			maxTemp: document.getElementsByClassName("weather-info-temperature-max")[0]
+			minTemp: document.getElementsByClassName("weather-info-temperature-min")[0]
+			icon: document.querySelectorAll(".weather-icon use")[0]
+			loading: document.querySelectorAll(".weather-forecast .loading")[0]
+			spinner: document.querySelectorAll(".weather-forecast .loading-spinner")[0]
 
 		@clock = setInterval =>
 			@updateTime()
@@ -30,7 +32,9 @@ class Weather
 	updateTime: ->
 		time = @getTime()
 		time = time.substr(0, time.length - 3)
-		@el.time.innerText = time
+
+		if @el.time
+			@el.time.innerText = time
 
 	getWeather: ->
 
@@ -122,26 +126,25 @@ class Weather
 					maxTemp: weather.max
 					minTemp: weather.min
 
-				@updateUI()
+				if @el.currentTemp
+					@updateUI()
+					@hideLoader()
 
 			.catch (err) ->
 				console.error err
-
-		# 	TEST
-
-		# @weather =
-		# 	condition: "sun"
-		# 	currentTemp: 19
-		# 	maxTemp: 12
-		# 	minTemp: 23
-
-		# @updateUI()
 
 	updateUI: ->
 
 		@el.icon.setAttribute "xlink:href", "#icon-" + @weather["condition"]
 		@el.currentTemp.innerText = @weather["currentTemp"]
-		@el.maxTemp.innerText = @weather["maxTemp"]
-		@el.minTemp.innerText = @weather["minTemp"]
+		@el.maxTemp.innerText = " " + @weather["maxTemp"]
+		@el.minTemp.innerText = " " + @weather["minTemp"]
+
+	hideLoader: ->
+
+		@el.loading.classList.add "loaded"
+		setTimeout =>
+			@el.spinner.remove()
+		, 400
 
 module.exports = new Weather
