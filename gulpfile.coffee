@@ -1,5 +1,4 @@
 # Dependencies
-
 gulp		= require "gulp"
 plugins		= require("gulp-load-plugins")(lazy: false)
 run			= require "run-sequence"
@@ -55,7 +54,6 @@ gulp.task "coffeescript", ->
 # Compile Stylus
 
 gulp.task "stylus", ->
-
 	gulp.src Config.src + "stylus/main.styl"
 	.pipe plugins.plumber()
 	.pipe plugins.stylus()
