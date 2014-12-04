@@ -32,5 +32,5 @@ deploy
 ### Server
 
 ```
-git push origin openshift
+git push openshift master
 ```
