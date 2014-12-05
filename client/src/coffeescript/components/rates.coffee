@@ -17,12 +17,17 @@ class Rates
 			GBP: 0
 			CNY: 0
 
+		if window.location.hostname is "localhost"
+			@url = "http://localhost:8000/api/0.1.0/currency"
+		else
+			@url = "http://darrylsnow-darrylsnow.rhcloud.com/api/0.1.0/currency"
+
 		@getRates()
 		@addEventListeners()
 
 	getRates: ->
 
-		fetch "http://darrylsnow-darrylsnow.rhcloud.com/api/0.1.0/currency"
+		fetch @url
 			.then (response) =>
 
 				@rates = JSON.parse response._body

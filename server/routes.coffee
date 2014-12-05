@@ -8,9 +8,10 @@ module.exports = (app) ->
 
 	app.use (req, res, next) ->
 		res.header "Access-Control-Allow-Origin", "*"
-		res.header "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"
+		res.header "Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept"
 		next()
 
+	app.use apiPath + version + "/availability", require ("./api/availability")
 	app.use apiPath + version + "/currency", require ("./api/currency")
 	app.use apiPath + version + "/subscriptions", require ("./api/subscriptions")
 	app.use apiPath + version + "/blog", require ("./api/blog")

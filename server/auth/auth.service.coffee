@@ -14,6 +14,7 @@ validateJwt = expressJwt({ secret: config.secrets.session })
 # Otherwise returns 403
 
 isAuthenticated = ->
+
 	compose()
 		# Validate jwt
 		.use (req, res, next) ->
@@ -36,6 +37,7 @@ isAuthenticated = ->
 # Checks if the user role meets the minimum requirements of the route
 
 hasRole = (roleRequired) ->
+
 	if !roleRequired then throw new Error "Required role needs to be set"
 
 	compose()

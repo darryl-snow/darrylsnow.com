@@ -1,24 +1,50 @@
-ActiveFocusHover()
-	&.active
-	&:active,
-	&:focus,
-	&:hover
-		{block}
-		
+// Layout
+
 getZIndex(index)
 	$zindex[index]
 		
 group()
 
 	&:after
-		clear					both
-		content					""
-		display					table
-	
+		clear				both
+		content				""
+		display				table
+
+half()
+	margin-top				2em
+	width					100%
+
+	&:first-of-type
+		margin-top			0
+
+	@media (min-width: 60em)
+		margin-top			0
+		width				50%
+
+floatleft()
+	float					left
+
+floatright()
+	float					right
+
+// States
+
+ActiveFocusHover()
+	&.active
+	&:active,
+	&:focus,
+	&:hover
+		{block}
+
+// Typography
+
 inline-list()
 	li
-		display					inline-block
+		display				inline-block
 		
 unstyled-list()
-	list-style					none
-	padding						0
+	list-style				none
+	padding					0
+	
+align(alignment)
+	text-align				alignment !important

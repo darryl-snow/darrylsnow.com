@@ -51,6 +51,21 @@ gulp.task "coffeescript", ->
 		showFiles: true
 	.pipe gulp.dest Config.build + "scripts"
 
+	gulp.src Config.src + "coffeescript/admin.coffee", read: false
+	.pipe plugins.plumber()
+	.pipe plugins.browserify
+		transform: ["coffeeify"]
+		# shim:
+		# 	hammerjs:
+		# 		path: Config.src + "lib/hammerjs/hammer.js"
+		# 		exports: "hammerjs"
+	.pipe plugins.if Config.publish, plugins.uglify()
+	.pipe plugins.rename "admin.js"
+	.pipe plugins.header "/* " + Config.name + " : " + Config.version + " : " + new Date() + " */"
+	.pipe plugins.size
+		showFiles: true
+	.pipe gulp.dest Config.build + "scripts"
+
 # Compile Stylus
 
 gulp.task "stylus", ->

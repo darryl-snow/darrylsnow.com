@@ -40,10 +40,16 @@ html(lang="en")
 		link(rel="icon", type="image/png", href="/images/favicon-96x96.png", sizes="96x96")
 		link(rel="icon", type="image/png", href="/images/favicon-160x160.png", sizes="160x160")
 		link(rel="icon", type="image/png", href="/images/favicon-192x192.png", sizes="192x192")
-		meta(name="msapplication-TileColor", content="#3498db")
+		meta(name="msapplication-TileColor", content="#f08080")
 		meta(name="msapplication-TileImage", content="images/mstile-144x144.png")
 		meta(name="msapplication-config", content="/images/browserconfig.xml")
 		link(rel="shortcut icon", href="/images/favicon.ico")
+
+		//- wait for github to turn on SSL before uncommenting this...
+		//- script.
+		//- 	var host = "yourweb.expert";
+		//- 	if ((host == window.location.host) && (window.location.protocol != "https:"))
+		//- 		window.location.protocol = "https";
 
 	body
 		include ../../images/sprite.svg

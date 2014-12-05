@@ -1,3 +1,7 @@
+require("es6-promise").polyfill()
+require "fetch"
+Cookies = require "cookies-js"
+
 class Login
 
 	constructor: ->
@@ -8,8 +12,15 @@ class Login
 			email: document.getElementsByClassName("js-login-email")[0]
 			password: document.getElementsByClassName("js-login-password")[0]
 			loginButton: document.getElementsByClassName("js-login")[0]
+			clientButton: document.getElementsByClassName("button-client-area")[0]
 
-		@addEventListeners()
+		if window.location.hostname is "localhost"
+			@url = "http://localhost:8000/auth/local"
+		else
+			@url = "http://darrylsnow-darrylsnow.rhcloud.com/auth/local"
+
+		if @el.loginButton
+			@addEventListeners()
 
 	addEventListeners: ->
 
@@ -18,13 +29,10 @@ class Login
 			@login()
 
 	login: ->
-		console.log @el.email.value
-		console.log @el.password.value
 
-		# show loading animation on form
 		@el.loading.classList.remove "loaded"
-		fetch("http://darrylsnow-darrylsnow.rhcloud.com/auth/local",
-			method: "get"
+		fetch(@url,
+			method: "post"
 			headers:
 				"Accept": "application/json"
 				"Content-Type": "application/json"
@@ -32,17 +40,32 @@ class Login
 				email: @el.email.value
 				password: @el.password.value
 		).then (response) =>
-			console.log response
 			@el.loading.classList.add "loaded"
 
-		# try to login
-		# 	hide loading animation
-		# 	if login successful
-		# 		remove error class from panelContent
-		# 		close panel
-		# 		transition page?
-		# 	else
-		# 		add error class to panelContent
+			if response.status is 200
+				@el.panelContent.classList.remove "error"
+				@el.panel.classList.remove "open"
+				@el.panel.classList.add "button--hidden"
+				@el.clientButton.classList.remove "button--hidden"
+
+				Cookies.set "darrylsnow", JSON.stringify
+					token: JSON.parse(response._body).token
+					email: @el.email.value
+				,
+					expires: 86400 # expires in 24 hours
+					# domain: "yourweb.expert"
+					# secure: true # cookie is only available over SSL
+
+				# window.location.href = "admin.html"
+
+			else
+				@el.panelContent.classList.add "error"
+				console.error JSON.parse(response._body).message
+
+	logout: ->
+		Cookies.expire "darrylsnow"
+		Cookies "darrylsnow", undefined
+
 
 
 module.exports = new Login

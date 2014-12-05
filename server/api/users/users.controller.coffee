@@ -71,6 +71,7 @@ exports.changePassword = (req, res, next) ->
 # Get my info
 
 exports.me = (req, res, next) ->
+	console.log req.user
 	userId = req.user._id
 	User.findOne
 		_id: userId

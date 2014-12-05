@@ -30,6 +30,7 @@ class Morph
 
 	closeMorph: (morph) ->
 		morph.classList.remove "open"
+		morph.querySelectorAll(".morph-button-content")[0].classList.remove "error"
 
 	closeAll: ->
 

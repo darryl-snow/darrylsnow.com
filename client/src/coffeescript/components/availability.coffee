@@ -12,22 +12,36 @@ class Availability
 
 		@activity = "nothing"
 
+		if window.location.hostname is "localhost"
+			@url = "http://localhost:8000/api/0.1.0/availability"
+		else
+			@url = "http://darrylsnow-darrylsnow.rhcloud.com/api/0.1.0/availability"
+
 		@updateUI()
 		@getActivity()
 
 	getActivity: ->
 
-		fetch "http://darrylsnow-darrylsnow.rhcloud.com/api/0.1.0/availability"
+		d = new Date()
+		date = d.getFullYear() + "/" + ("0" + (d.getMonth()+1)).slice(-2) + "/" +
+		 ("0" + d.getDate()).slice(-2)
+
+		fetch @url + "/" + encodeURIComponent(date)
 			.then (response) =>
+
 				availability = JSON.parse response._body
-				@activity = aavailability.activity
+				if availability
+					@activity = availability.activity
+				else
+					@activity = "resting :)"
 
 				@updateUI()
 				@hideLoader()
 
 	updateUI: ->
 
-		@el.activity.innerText = @activity
+		if @el.activity
+			@el.activity.innerText = @activity
 
 	hideLoader: ->
 

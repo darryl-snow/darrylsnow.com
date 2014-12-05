@@ -23,6 +23,11 @@ class Weather
 			maxTemp: 0
 			minTemp: 0
 
+		if window.location.hostname is "localhost"
+			@url = "http://localhost:8000/api/0.1.0/weather"
+		else
+			@url = "http://darrylsnow-darrylsnow.rhcloud.com/api/0.1.0/weather"
+
 		@getWeather()
 
 	getTime: ->
@@ -38,7 +43,7 @@ class Weather
 
 	getWeather: ->
 
-		fetch "http://darrylsnow-darrylsnow.rhcloud.com/api/0.1.0/weather"
+		fetch @url
 			.then (response) =>
 
 				weather = JSON.parse response._body

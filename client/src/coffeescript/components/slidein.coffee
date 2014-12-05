@@ -12,24 +12,26 @@ class Slidein
 		window.addEventListener "scroll", =>
 			@didScroll = true
 
-		setInterval =>
-			if @didScroll and !@menuIsOpen()
-				@updateSections()
-				@didScroll = false
-		, 100
-
 		@hasResized = false
 		window.addEventListener "resize", =>
 			@hasResized = true
 
-		setInterval =>
-			if @hasResized and !@menuIsOpen()
-				@updateSections()
-				@hasResized = false
-		, 100
+		if @el.perspective
 
-		if !@menuIsOpen()
-			@updateSections()
+			setInterval =>
+				if @didScroll and !@menuIsOpen()
+					@updateSections()
+					@didScroll = false
+			, 100
+
+			setInterval =>
+				if @hasResized and !@menuIsOpen()
+					@updateSections()
+					@hasResized = false
+			, 100
+
+			if !@menuIsOpen()
+				@updateSections()
 
 	updateSections: ->
 		for section in @el.slideSections

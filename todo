@@ -1,9 +1,16 @@
 check for extends - keep related, source order
-loading animation
-login popup
-subscription function
 
 browser testing
-unit tests?
 
+admin area
+ -  list users
+ -  add user
+ -  list activities
+ -  add activity
+ -  list subscribers
+ -  export subscribers
+ -  delete subscribers
+unit tests
 wmt
+custom email
+https / cloudflare

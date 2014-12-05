@@ -14,8 +14,20 @@ User.find({}).remove ->
 	,
 		provider: "local",
 		role: "admin",
-		name: "Admin",
-		email: "admin@admin.com",
-		password: "admin"
+		name: "Darryl Snow",
+		email: "dazsnow@gmail.com",
+		password: "mugwuffin"
 	, ->
 			console.log "finished populating users"
+
+Availability = require "../api/availability/availability.model"
+
+Availability.find({}).remove ->
+	Availability.create
+		date: "2014/12/05"
+		activity: "diageo"
+	,
+		date: "2014/12/06"
+		activity: "apple"
+	, ->
+		console.log "finished populating availability"

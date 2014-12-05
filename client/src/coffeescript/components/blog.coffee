@@ -36,7 +36,6 @@ class Blog
 					url: blog.url
 
 				@updateUI()
-				@hideLoader()
 
 	updateUI: ->
 
@@ -61,14 +60,17 @@ class Blog
 
 		@el.title.innerText = @post.title
 		@el.date.innerText = day + " " + month + ", " + year
-		@el.date.setAttribute "content", date
+		@el.date.setAttribute "content", date.toString()
 		@el.body.innerHTML = @post.body
 		@el.button.setAttribute "href", @post.url
-		@post.url.setAttribute "content", @post.url
+		@el.url.setAttribute "content", @post.url
+
+		@hideLoader()
 
 	hideLoader: ->
 
 		@el.loading.classList.add "loaded"
+
 		setTimeout =>
 			@el.spinner.remove()
 		, 400
